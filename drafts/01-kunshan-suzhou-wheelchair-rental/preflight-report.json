@@ -1,0 +1,219 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\01-kunshan-suzhou-wheelchair-rental",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 1,
+      "name": "Capability Discovery",
+      "passed": true,
+      "violations": [],
+      "warnings": [
+        "live tool availability not provided; MCP image tools cannot be verified from declarations"
+      ],
+      "capabilities": {
+        "live_tools": [],
+        "live_tools_source": "not-provided",
+        "env_keys_present": {
+          "GOOGLE_AI_API_KEY": false,
+          "UNSPLASH_ACCESS_KEY": false,
+          "PEXELS_API_KEY": false,
+          "PIXABAY_API_KEY": false
+        },
+        "python_deps": {
+          "patchright": true,
+          "playwright": false,
+          "weasyprint": true,
+          "google.genai": true,
+          "requests": true,
+          "markdown": true
+        },
+        "project_root_files": {
+          "BRAND.md": false,
+          "VOICE.md": false,
+          "DISCOURSE.md": false
+        },
+        "agents": {
+          "blog-reviewer": true,
+          "blog-researcher": true,
+          "blog-writer": true,
+          "blog-seo": true,
+          "blog-translator": true
+        },
+        "scripts": {
+          "scripts/lint_prose.py": true,
+          "scripts/load_untrusted_root.py": true,
+          "scripts/analyze_blog.py": true
+        },
+        "image_gen_path_available": true,
+        "openverse_assumed_available": true
+      }
+    },
+    {
+      "gate": 2,
+      "name": "Format Completeness",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "artifacts": {
+        "slug": "kunshan-suzhou-wheelchair-rental",
+        "md": [
+          "kunshan-suzhou-wheelchair-rental.md"
+        ],
+        "html": [
+          "kunshan-suzhou-wheelchair-rental.html"
+        ],
+        "pdf": [
+          "kunshan-suzhou-wheelchair-rental.pdf"
+        ],
+        "hero": [
+          "hero.jpg"
+        ],
+        "review_present": true
+      },
+      "hero_checks": [
+        {
+          "file": "hero.jpg",
+          "format": "JPEG",
+          "width": 1200,
+          "height": 630,
+          "decoder": "pillow"
+        }
+      ],
+      "pdf_check": {
+        "file": "kunshan-suzhou-wheelchair-rental.pdf",
+        "bytes": 2062146,
+        "pages": 12
+      }
+    },
+    {
+      "gate": 3,
+      "name": "Visual Verification",
+      "passed": true,
+      "violations": [],
+      "warnings": [
+        "backend: patchright"
+      ],
+      "per_viewport": {
+        "mobile": {
+          "result": {
+            "hiddenText": {
+              "chars": 0,
+              "elements": 0,
+              "first": null
+            },
+            "overflows": [],
+            "bg": "rgb(250, 250, 249)",
+            "jsonLdValid": true,
+            "jsonLdType": "BlogPosting",
+            "jsonLdMissingFields": [],
+            "jsonLdVisibleConsistent": true,
+            "jsonLdConsistencyMismatches": [],
+            "jsonLdWordCount": 1065,
+            "jsonLdConsistencyDetails": {}
+          },
+          "console_errors": []
+        },
+        "tablet": {
+          "result": {
+            "hiddenText": {
+              "chars": 0,
+              "elements": 0,
+              "first": null
+            },
+            "overflows": [],
+            "bg": "rgb(250, 250, 249)",
+            "jsonLdValid": true,
+            "jsonLdType": "BlogPosting",
+            "jsonLdMissingFields": [],
+            "jsonLdVisibleConsistent": true,
+            "jsonLdConsistencyMismatches": [],
+            "jsonLdWordCount": 1065,
+            "jsonLdConsistencyDetails": {}
+          },
+          "console_errors": []
+        },
+        "desktop": {
+          "result": {
+            "hiddenText": {
+              "chars": 0,
+              "elements": 0,
+              "first": null
+            },
+            "overflows": [],
+            "bg": "rgb(250, 250, 249)",
+            "jsonLdValid": true,
+            "jsonLdType": "BlogPosting",
+            "jsonLdMissingFields": [],
+            "jsonLdVisibleConsistent": true,
+            "jsonLdConsistencyMismatches": [],
+            "jsonLdWordCount": 1065,
+            "jsonLdConsistencyDetails": {}
+          },
+          "console_errors": [],
+          "back_button": {
+            "attempted_back": true,
+            "observation_complete": true,
+            "returned_to_previous": true,
+            "before_url": "file:///D:/%40kaifa/OpenGEO/drafts/01-kunshan-suzhou-wheelchair-rental/kunshan-suzhou-wheelchair-rental.html",
+            "after_url": "about:blank",
+            "checked": true,
+            "conclusive": true,
+            "obstructed": false,
+            "violation": null
+          }
+        },
+        "desktop-dark": {
+          "bg": "rgb(24, 24, 27)",
+          "light_bg": "rgb(250, 250, 249)"
+        }
+      }
+    },
+    {
+      "gate": 4,
+      "name": "Content Review",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "blocking": false,
+      "reason": "cleared all gates; 92/100 overall, all figures, deposits, clauses and attributions traced to the bundle, zero blocking defects",
+      "score": 92
+    },
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "imgs": [
+        "hero.jpg",
+        "02-rental-scene.jpg",
+        "03-model-photo.jpg",
+        "04-pickup-points.jpg",
+        "05-showroom.jpg"
+      ],
+      "links_checked": 12,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 1065,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 1065,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 29510,
+        "critical_positions": {
+          "title": 304,
+          "meta": 396,
+          "canonical": 661,
+          "json_ld": 2868,
+          "main_content": 8202
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5313
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

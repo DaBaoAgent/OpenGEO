@@ -102,13 +102,14 @@ package reports a missing verifier state and needs a fresh
 `blog_preflight.py --init-review-nonce` and a fresh `blog-reviewer` dispatch
 before it passes again.
 
-`drafts/` is ignored by Git and `out/` is tracked. The working package holds
-company originals, the raw source documents behind each claim and rendered
-previews, so it stays local, and `kb-evidence.json` is the recipe that rebuilds
-it. The publish set is the product, so the article and its images are
-committed. The rendered HTML is one reason the working package stays out:
-`scripts/check_secrets.py` has no adjudication rule for the `blog-source-sha256`
-and `blog-body-sha256` meta tags it carries.
+Both folders are tracked. The publish set is the product; the working package
+is what a claim can be audited against, because it carries the company
+originals and the raw source documents behind each one. That is also why the
+repository has to stay private: it now holds internal price sheets, agreements,
+inventory and the photographs they cite, and git history is not a place you can
+take those back from. `scripts/check_secrets.py` adjudicates the
+`blog-source-sha256` and `blog-body-sha256` meta tags the renderer stamps into
+the HTML, because they are content digests rather than credentials.
 
 
 ## Workflow

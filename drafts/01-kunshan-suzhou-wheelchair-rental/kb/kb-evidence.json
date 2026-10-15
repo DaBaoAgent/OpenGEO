@@ -1,0 +1,645 @@
+{
+  "generated_at": "2026-10-15T04:25:23+00:00",
+  "source": {
+    "mcp_url": "http://192.168.1.79:8788/mcp",
+    "files_url": "http://192.168.1.79:8789/api"
+  },
+  "queries": [
+    {
+      "query": "轮椅租赁价格表",
+      "kb": "all",
+      "hit_count": 5
+    },
+    {
+      "query": "佳康顺轮椅租赁库存清单",
+      "kb": "all",
+      "hit_count": 5
+    },
+    {
+      "query": "佳康顺轮椅租赁流程",
+      "kb": "all",
+      "hit_count": 5
+    },
+    {
+      "query": "昆山佳康顺医疗器械有限公司租赁轮椅的协议",
+      "kb": "all",
+      "hit_count": 5
+    },
+    {
+      "query": "P16L 可上飞机款电动轮椅 参数与卖点",
+      "kb": "all",
+      "hit_count": 5
+    },
+    {
+      "query": "带货品类与供应链 公司主体",
+      "kb": "all",
+      "hit_count": 5
+    },
+    {
+      "query": "小红书文案 自提点 阳光大厦 康倍星",
+      "kb": "all",
+      "hit_count": 5
+    },
+    {
+      "query": "福宏康复 佳康顺 企业资料 专利",
+      "kb": "all",
+      "hit_count": 5
+    }
+  ],
+  "documents": [
+    {
+      "doc_id": "jks-product/轮椅租赁价格表.png-762135.md",
+      "title": "轮椅租赁价格表.png",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 1067,
+      "sha256": "59e5bbebdae80956e971df82daac3c785ef2ddfeeafff138acdcdb1e11e3d1e9",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_轮椅租赁价格表.png-762135.md.md",
+      "matched_queries": [
+        "轮椅租赁价格表"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/轮椅租赁价格表.png.md",
+        "8 本地推素材/轮椅租赁价格表.png"
+      ]
+    },
+    {
+      "doc_id": "marketing/1-(1)-b3188e.txt",
+      "title": "闲鱼文案/1 (1)",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 13567,
+      "sha256": "9256a50af8228fab18f3a7f0f805f4a78a7e1d7c1756a1a1ba9f93b549230449",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\marketing_1-_1_-b3188e.txt.md",
+      "matched_queries": [
+        "轮椅租赁价格表"
+      ],
+      "assets": [
+        "01-公司文档/8 本地推素材/闲鱼文案/1"
+      ]
+    },
+    {
+      "doc_id": "marketing/1-(1)-697f8e.txt",
+      "title": "闲鱼文案/1 (1)",
+      "kb": "marketing",
+      "version": 4,
+      "chars": 13310,
+      "sha256": "d2f9a7a0f6d10cf6d48e0f7b1d5d235bb9494e0908ae50f93ce9f7fb6de4e611",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\marketing_1-_1_-697f8e.txt.md",
+      "matched_queries": [
+        "轮椅租赁价格表"
+      ],
+      "assets": [
+        "8 本地推素材/闲鱼文案/1"
+      ]
+    },
+    {
+      "doc_id": "jks-product/轮椅租赁价格表-08afbf.png",
+      "title": "轮椅租赁价格表",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 705,
+      "sha256": "e70229be39e630e8da46c6a7744702b6f5c6a110269d36f4fa2e749a658b2b68",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_轮椅租赁价格表-08afbf.png.md",
+      "matched_queries": [
+        "轮椅租赁价格表"
+      ],
+      "assets": [
+        "8 本地推素材/轮椅租赁价格表.png"
+      ]
+    },
+    {
+      "doc_id": "marketing/闲鱼文案_txt合并-dfb3bc.md",
+      "title": "闲鱼文案/闲鱼文案_txt合并",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 14605,
+      "sha256": "538846d5242aefa6e9b03623a1746a2f71dc4f804975ad028b22aa3567f77ea4",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\marketing_闲鱼文案_txt合并-dfb3bc.md.md",
+      "matched_queries": [
+        "轮椅租赁价格表"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/闲鱼文案/闲鱼文案_txt合并.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/佳康顺轮椅租赁库存清单-2bb772.md",
+      "title": "8 本地推素材/佳康顺轮椅租赁库存清单",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 366,
+      "sha256": "f48aeff9b970143f7a4a4f08af3a4caa78cbbe635957c120832891cb8326c8d4",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_佳康顺轮椅租赁库存清单-2bb772.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁库存清单"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/佳康顺轮椅租赁库存清单.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/佳康顺轮椅租赁库存清单.docx-8f9ca6.md",
+      "title": "佳康顺轮椅租赁库存清单.docx",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 1597,
+      "sha256": "08e5389412eac07b26b909353c22eba2aa1af3e96463c280ed69bd152e71fea4",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_佳康顺轮椅租赁库存清单.docx-8f9ca6.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁库存清单"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/佳康顺轮椅租赁库存清单.docx.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/佳康顺轮椅租赁库存清单-bfc700.docx",
+      "title": "8 本地推素材/佳康顺轮椅租赁库存清单",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 1069,
+      "sha256": "0464559253585e94e4f70515901511552720395a99c18366fb913639c8fd6bfe",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_佳康顺轮椅租赁库存清单-bfc700.docx.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁库存清单"
+      ],
+      "assets": [
+        "8 本地推素材/佳康顺轮椅租赁库存清单.docx"
+      ]
+    },
+    {
+      "doc_id": "common/profile-ee6146.md",
+      "title": "记忆/profile",
+      "kb": "common",
+      "version": 2,
+      "chars": 20000,
+      "sha256": "29ed695ec90d4b3a0800d1a779a61aaf364b5273f143caf315945bc72f025302",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_profile-ee6146.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁库存清单"
+      ],
+      "assets": [
+        "03-Viking知识/记忆/profile.md"
+      ]
+    },
+    {
+      "doc_id": "common/用户-616c8e.md",
+      "title": "用户",
+      "kb": "common",
+      "version": 2,
+      "chars": 20000,
+      "sha256": "2891b32a616585e8708f5b97f6709f0d6d162649b3a99ee98acd7c7666053d87",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_用户-616c8e.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁库存清单"
+      ],
+      "assets": [
+        "03-Viking知识/记忆/entities/Hermes会话自动导出归档/用户.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/佳康顺轮椅租赁流程-c948cd.md",
+      "title": "工作文档/佳康顺轮椅租赁流程",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 764,
+      "sha256": "4211b01011bed57c110fa4c7f79a4b76275fa1168324836c6bc6bf32710770b1",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_佳康顺轮椅租赁流程-c948cd.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁流程"
+      ],
+      "assets": [
+        "03-Viking知识/记忆/entities/工作文档/佳康顺轮椅租赁流程.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/佳康顺轮椅租赁流程-f0e77b.md",
+      "title": "8 本地推素材/佳康顺轮椅租赁流程",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 356,
+      "sha256": "4f8b4699a49c642b3bb540e98ad6eb4411cf5aba10466cfb84155d8c53524b81",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_佳康顺轮椅租赁流程-f0e77b.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁流程"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/佳康顺轮椅租赁流程.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/佳康顺轮椅租赁流程.doc-fef73d.md",
+      "title": "佳康顺轮椅租赁流程.doc",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 1604,
+      "sha256": "77e68b10a4d4ac2d4a3f8b4b0fa21f452c536f40965350f623c2bca018201792",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_佳康顺轮椅租赁流程.doc-fef73d.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁流程"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/佳康顺轮椅租赁流程.doc.md"
+      ]
+    },
+    {
+      "doc_id": "marketing/闲鱼轮椅租赁文案-001472.md",
+      "title": "闲鱼轮椅租赁文案",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 1632,
+      "sha256": "928e3484b5b18a5f5d52ef2ce87444bce4b05bc67369af22ea6d117bed11f62f",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\marketing_闲鱼轮椅租赁文案-001472.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁流程"
+      ],
+      "assets": [
+        "03-Viking知识/记忆/entities/工作文档/闲鱼轮椅租赁文案.md"
+      ]
+    },
+    {
+      "doc_id": "common/05-工作生活记录总览-cd28f2.md",
+      "title": "@数据汇总/05-工作生活记录总览",
+      "kb": "common",
+      "version": 4,
+      "chars": 10361,
+      "sha256": "5ad2541048977168b02b9f4ca4c9d03878902d4a1cf889ff64aba0105de116eb",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_05-工作生活记录总览-cd28f2.md.md",
+      "matched_queries": [
+        "佳康顺轮椅租赁流程"
+      ],
+      "assets": [
+        "@数据汇总/05-工作生活记录总览.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/昆山佳康顺医疗器械有限公司租赁轮椅的协议-7a24ad.md",
+      "title": "8 本地推素材/昆山佳康顺医疗器械有限公司租赁轮椅的协议",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 402,
+      "sha256": "bd48422ee3b788a0f8b2f46c36070e784b86f64ea5e6828fd96cf282d8e1a73b",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_昆山佳康顺医疗器械有限公司租赁轮椅的协议-7a24ad.md.md",
+      "matched_queries": [
+        "昆山佳康顺医疗器械有限公司租赁轮椅的协议"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/昆山佳康顺医疗器械有限公司租赁轮椅的协议.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/昆山佳康顺医疗器械有限公司租赁轮椅的协议.docx-f08ac7.md",
+      "title": "昆山佳康顺医疗器械有限公司租赁轮椅的协议.docx",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 1503,
+      "sha256": "4e5382aa2339830541fe45753a73d768ae7011b051f82666198bcadb4c9841b1",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_昆山佳康顺医疗器械有限公司租赁轮椅的协议.docx-f08ac7.md.md",
+      "matched_queries": [
+        "昆山佳康顺医疗器械有限公司租赁轮椅的协议"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/8 本地推素材/昆山佳康顺医疗器械有限公司租赁轮椅的协议.docx.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/昆山佳康顺医疗器械有限公司租赁轮椅的协议-6d8d3d.docx",
+      "title": "8 本地推素材/昆山佳康顺医疗器械有限公司租赁轮椅的协议",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 964,
+      "sha256": "fe4c46f0f1625ef0b39bbfe3f4d19cebe461a35187c64829244ac48f41df2d4e",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_昆山佳康顺医疗器械有限公司租赁轮椅的协议-6d8d3d.docx.md",
+      "matched_queries": [
+        "昆山佳康顺医疗器械有限公司租赁轮椅的协议"
+      ],
+      "assets": [
+        "8 本地推素材/昆山佳康顺医疗器械有限公司租赁轮椅的协议.docx"
+      ]
+    },
+    {
+      "doc_id": "jks-product/dzfp_26322000002069461321_昆山佳康顺医疗器械有限公司_20260318152400-d9802b.md",
+      "title": "12 抖店/dzfp_26322000002069461321_昆山佳康顺医疗器械有限公司_20260318152400",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 529,
+      "sha256": "9d34a299962fde4225c4a1f259a82605069d849c0ee9f2fa5f57bbffa28376cd",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_dzfp_26322000002069461321_昆山佳康顺医疗器械有限公司_20260318152400-d9802b.md.md",
+      "matched_queries": [
+        "昆山佳康顺医疗器械有限公司租赁轮椅的协议"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/12 抖店/dzfp_26322000002069461321_昆山佳康顺医疗器械有限公司_20260318152400.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/佳康顺医疗器械-59d31c.pdf",
+      "title": "@其他资料/佳康顺医疗器械",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 20000,
+      "sha256": "04e6887215d235cef28320e7fa5bf27d0e096b3acb5217f7a7bae0badae3dde5",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_佳康顺医疗器械-59d31c.pdf.md",
+      "matched_queries": [
+        "昆山佳康顺医疗器械有限公司租赁轮椅的协议"
+      ],
+      "assets": [
+        "5 @文档/@其他资料/佳康顺医疗器械.pdf"
+      ]
+    },
+    {
+      "doc_id": "jks-product/P16L可上飞机款电动轮椅-参数与卖点-584bf2.md",
+      "title": "工作资料/P16L可上飞机款电动轮椅-参数与卖点",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 1084,
+      "sha256": "8a625958cea2fa29ebc990d04ac60d22291698773eeb2a2fd66c685754a929a3",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_P16L可上飞机款电动轮椅-参数与卖点-584bf2.md.md",
+      "matched_queries": [
+        "P16L 可上飞机款电动轮椅 参数与卖点"
+      ],
+      "assets": [
+        "03-Viking知识/记忆/entities/工作资料/P16L可上飞机款电动轮椅-参数与卖点.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/P16L可上飞机款电动轮椅-参数与卖点-2bcd3a.md",
+      "title": "产品参数/P16L可上飞机款电动轮椅-参数与卖点",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 2009,
+      "sha256": "b3e15178c0bbc81b9418a38dd00e82783a01130e304670ed950fb7b6f3f04691",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_P16L可上飞机款电动轮椅-参数与卖点-2bcd3a.md.md",
+      "matched_queries": [
+        "P16L 可上飞机款电动轮椅 参数与卖点"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/10 产品高清图/产品参数/P16L可上飞机款电动轮椅-参数与卖点.md"
+      ]
+    },
+    {
+      "doc_id": "common/.overview-b4e9e2.md",
+      "title": "工作资料/.overview",
+      "kb": "common",
+      "version": 2,
+      "chars": 20000,
+      "sha256": "df29281a99b9ae0d7f7c0869cc96e4a69fdd6d6f7729f02d7638c7d72f031a4e",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_.overview-b4e9e2.md.md",
+      "matched_queries": [
+        "P16L 可上飞机款电动轮椅 参数与卖点"
+      ],
+      "assets": [
+        "03-Viking知识/记忆/entities/工作资料/.overview.md"
+      ]
+    },
+    {
+      "doc_id": "common/07_带货品类与供应链-429871.md",
+      "title": "07_带货品类与供应链",
+      "kb": "common",
+      "version": 4,
+      "chars": 13109,
+      "sha256": "2ccadcb88fbf1b8a9a4cc3d909f25ad24f1af51b1b3893351468745efe4277cc",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_07_带货品类与供应链-429871.md.md",
+      "matched_queries": [
+        "带货品类与供应链 公司主体"
+      ],
+      "assets": [
+        "19 最近待办/陆鸿/luhong/07_带货品类与供应链.md"
+      ]
+    },
+    {
+      "doc_id": "common/陆鸿优选-带货品类与供应链-aa20ab.md",
+      "title": "陆鸿优选-带货品类与供应链",
+      "kb": "common",
+      "version": 2,
+      "chars": 1024,
+      "sha256": "c4cc200d73bcb621bcff644d5126d089aead89ae6bece1fc85563a519af9c880",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_陆鸿优选-带货品类与供应链-aa20ab.md.md",
+      "matched_queries": [
+        "带货品类与供应链 公司主体"
+      ],
+      "assets": [
+        "03-Viking知识/记忆/entities/工作资料/陆鸿优选-带货品类与供应链.md"
+      ]
+    },
+    {
+      "doc_id": "common/00_项目定位与商业模式-ccb5a8.md",
+      "title": "00_项目定位与商业模式",
+      "kb": "common",
+      "version": 4,
+      "chars": 715,
+      "sha256": "f9ec2bf7e6a16549fe8b956e3a502473f560bbadd0d48acffdcfee6369e95b38",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_00_项目定位与商业模式-ccb5a8.md.md",
+      "matched_queries": [
+        "带货品类与供应链 公司主体"
+      ],
+      "assets": [
+        "19 最近待办/陆鸿/luhong/00_项目定位与商业模式.md"
+      ]
+    },
+    {
+      "doc_id": "common/README-6748ce.md",
+      "title": "luhong/README",
+      "kb": "common",
+      "version": 4,
+      "chars": 1856,
+      "sha256": "bac48a2c794846fa6bbec1d839217ee9a2fecb10294a0bed7ac29d944e809234",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_README-6748ce.md.md",
+      "matched_queries": [
+        "带货品类与供应链 公司主体"
+      ],
+      "assets": [
+        "19 最近待办/陆鸿/luhong/README.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/2-918418.png",
+      "title": "70已用/2",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 111,
+      "sha256": "7aca6db0635023bf036a655581da5499e3c66ce15577957a41ab348a0cad0f60",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_2-918418.png.md",
+      "matched_queries": [
+        "小红书文案 自提点 阳光大厦 康倍星"
+      ],
+      "assets": [
+        "2   轮椅租赁图文/14 昆山成片/70已用/2.png"
+      ]
+    },
+    {
+      "doc_id": "jks-product/5-cbdbcd.png",
+      "title": "71已用/5",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 113,
+      "sha256": "6039b93ce0159887f3d1c9e681b5cf782b10d8124d852bc0a84f54e5aa48636f",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_5-cbdbcd.png.md",
+      "matched_queries": [
+        "小红书文案 自提点 阳光大厦 康倍星"
+      ],
+      "assets": [
+        "2   轮椅租赁图文/14 昆山成片/71已用/5.png"
+      ]
+    },
+    {
+      "doc_id": "jks-product/5-ae20d1.png",
+      "title": "72已发/5",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 119,
+      "sha256": "14ebdd9d3919ceff3f3e6e0d526e1a9170be0fec38d802f2afabf14dcff9e9ed",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_5-ae20d1.png.md",
+      "matched_queries": [
+        "小红书文案 自提点 阳光大厦 康倍星"
+      ],
+      "assets": [
+        "2   轮椅租赁图文/14 昆山成片/72已发/5.png"
+      ]
+    },
+    {
+      "doc_id": "jks-product/5-db98e6.png",
+      "title": "73已发/5",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 118,
+      "sha256": "7cf817ac369d78629e8fa794f30d7f95c6cd5ec435bad91e92b0eb723571b13b",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_5-db98e6.png.md",
+      "matched_queries": [
+        "小红书文案 自提点 阳光大厦 康倍星"
+      ],
+      "assets": [
+        "2   轮椅租赁图文/14 昆山成片/73已发/5.png"
+      ]
+    },
+    {
+      "doc_id": "marketing/发布文案-61acd5.txt",
+      "title": "44/发布文案",
+      "kb": "marketing",
+      "version": 4,
+      "chars": 138,
+      "sha256": "ff1c12c83712cd07fdf5648d7a0e5b785fe241e09fa5e20ab078c03ec17b419a",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\marketing_发布文案-61acd5.txt.md",
+      "matched_queries": [
+        "小红书文案 自提点 阳光大厦 康倍星"
+      ],
+      "assets": [
+        "1 蓓蓓的文件/5 小红书图文/AI视频/成片/1 已发/44/发布文案.txt"
+      ]
+    },
+    {
+      "doc_id": "jks-product/2025佳康顺内销目录-ab48aa.pdf",
+      "title": "产品资料/2025佳康顺内销目录",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 20000,
+      "sha256": "e353af670b4b834951a62220ef14b9f2e55336ba580d836e7e0c67f28f80ef2a",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_2025佳康顺内销目录-ab48aa.pdf.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 企业资料 专利"
+      ],
+      "assets": [
+        "13 佳康顺资料/产品资料/2025佳康顺内销目录.pdf"
+      ]
+    },
+    {
+      "doc_id": "jks-product/2025佳康顺内销目录.pdf-d55e37.md",
+      "title": "2025佳康顺内销目录.pdf",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 20000,
+      "sha256": "63304c430ce345bfb600ba64ac4a378170b079bb5681c01587d3a3b101e3da26",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\jks-product_2025佳康顺内销目录.pdf-d55e37.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 企业资料 专利"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/13 佳康顺资料/产品资料/2025佳康顺内销目录.pdf.md"
+      ]
+    },
+    {
+      "doc_id": "common/官网.txt-c77b7f.md",
+      "title": "官网.txt",
+      "kb": "common",
+      "version": 2,
+      "chars": 6967,
+      "sha256": "d4534507f6481dc7424f6691b2214045cade8fc26d70f76b0152f52961763e1a",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_官网.txt-c77b7f.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 企业资料 专利"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@其他资料/官网.txt.md"
+      ]
+    },
+    {
+      "doc_id": "common/官网-453166.md",
+      "title": "@其他资料/官网",
+      "kb": "common",
+      "version": 2,
+      "chars": 6586,
+      "sha256": "64aa4a38654dc6d825df8e79b03174195ab6e627d8e85a3c8c3be8be2d6af8cb",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_官网-453166.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 企业资料 专利"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@其他资料/官网.md"
+      ]
+    },
+    {
+      "doc_id": "common/官网-795403.txt",
+      "title": "@其他资料/官网",
+      "kb": "common",
+      "version": 4,
+      "chars": 6484,
+      "sha256": "a932d362809af540ee601f748dbe7170f0a22a108baeee5c33f6f47bd35a2a58",
+      "local_path": "drafts\\kunshan-suzhou-wheelchair-rental\\kb\\documents\\common_官网-795403.txt.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 企业资料 专利"
+      ],
+      "assets": [
+        "5 @文档/@其他资料/官网.txt"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "root": "files",
+      "source_path": "2   轮椅租赁图文/14 昆山成片/70已用/2.png",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\kunshan-suzhou-wheelchair-rental\\kb\\assets\\2   轮椅租赁图文\\14 昆山成片\\70已用\\2.png",
+      "bytes": 3105780,
+      "sha256": "3f57bbe43a4371e5298b8e03db563024fa3b6ccc0c33d7037faaa75032cd7f28"
+    },
+    {
+      "root": "files",
+      "source_path": "2   轮椅租赁图文/14 昆山成片/71已用/5.png",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\kunshan-suzhou-wheelchair-rental\\kb\\assets\\2   轮椅租赁图文\\14 昆山成片\\71已用\\5.png",
+      "bytes": 3186343,
+      "sha256": "4fc396ca83af0489eec22b6d6f66a6e3b8f427174f23af5304f900e7b6239271"
+    },
+    {
+      "root": "files",
+      "source_path": "2   轮椅租赁图文/14 昆山成片/72已发/5.png",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\kunshan-suzhou-wheelchair-rental\\kb\\assets\\2   轮椅租赁图文\\14 昆山成片\\72已发\\5.png",
+      "bytes": 3035914,
+      "sha256": "ddcb35642f00742b291f7a9ec9d3c45ffc1c642735d7a1ef725701376bf07efc"
+    },
+    {
+      "root": "files",
+      "source_path": "2   轮椅租赁图文/14 昆山成片/73已发/5.png",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\kunshan-suzhou-wheelchair-rental\\kb\\assets\\2   轮椅租赁图文\\14 昆山成片\\73已发\\5.png",
+      "bytes": 3436563,
+      "sha256": "031a2e04792e1801723e2e8d2927f8ae42c9a0d9d152fffaf738ec8fc1ceceff"
+    }
+  ],
+  "unresolved_assets": [
+    {
+      "root": "files",
+      "path": "8 本地推素材/轮椅租赁价格表.png",
+      "error": "download 8 本地推素材/轮椅租赁价格表.png: HTTP 404 {\"ok\": false, \"error\": \"not a file\"}",
+      "resolution": "missing"
+    }
+  ]
+}

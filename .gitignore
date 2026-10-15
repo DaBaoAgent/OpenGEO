@@ -63,12 +63,9 @@ output/
 demo-output/
 .raw/
 
-# Company content packages. drafts/<NN>-<slug>/ is the gated working package:
-# it holds company originals, the raw source documents behind each claim and the
-# rendered previews, so it stays out of version control. out/<NN>-<slug>/ is the
-# publish set derived from it, which is the article and its images and is
-# tracked, because that folder is the product. See docs/COMPANY-KB.md.
-drafts/
+# Company content packages. drafts/<NN>-<slug>/ is the gated working package and
+# out/<NN>-<slug>/ is the publish set derived from it. Both are tracked.
+# See docs/COMPANY-KB.md.
 
 # Working documents
 definitive-resesarch-blueprint-for-claude-blog.md

@@ -1,4 +1,5 @@
 """Bound public ownership-commit adjudication without ignoring other findings."""
+import hashlib
 import importlib.util
 from pathlib import Path
 
@@ -75,3 +76,16 @@ def test_packaged_evidence_digest_does_not_disable_credential_detection(tmp_path
     assert POLICY.scan_forbidden_values() == [
         {"file": "brain/references/evidence/review.json", "line": 1, "type": "GitHub token"}
     ]
+
+
+def test_rendered_digest_meta_is_adjudicated_only_for_blog_meta_tags():
+    policy_type = {"type": "Hex High Entropy String"}
+    # built at runtime: a literal 64-hex string is itself a scan finding
+    digest = hashlib.sha256(b"legacy").hexdigest()
+    line = f'<meta name="blog-source-sha256" content="{digest}">'
+    assert POLICY.is_adjudicated("out/01-a/a.html", policy_type, line)
+    body = f'<meta name="blog-body-sha256" content="{digest}">'
+    assert POLICY.is_adjudicated("out/01-a/a.html", policy_type, body)
+    unrelated = f'<meta name="api-token" content="{digest}">'
+    assert not POLICY.is_adjudicated("out/01-a/a.html", policy_type, unrelated)
+    assert not POLICY.is_adjudicated("out/01-a/a.html", policy_type, digest)

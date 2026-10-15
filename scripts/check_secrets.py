@@ -36,6 +36,13 @@ LEGACY_COMMIT_PATHS = frozenset({
     "tests/test_windows_installer_ownership.py",
     "tests/windows/windows_installer_ownership_smoke.ps1",
 })
+# blog_render.py stamps the source and body digests into the published HTML so a
+# reader can tie the page back to the markdown it came from. They are content
+# hashes of the same class as the JSON fields above, not credentials.
+RENDERED_DIGEST_META_RE = re.compile(
+    r'<meta\s+name="blog-(?:source|body)-sha256"\s+content="[0-9a-f]{64}"',
+    re.IGNORECASE,
+)
 LEGACY_COMMIT_LINE_RE = re.compile(
     r"""\s*(?:(?:"(?:commit|revision)"|\$Baseline)\s*(?::|=)\s*|assert\s+)?["'](?P<commit>[0-9a-f]{40})["'](?:\s+in\s+source)?\s*,?\s*"""
 )
@@ -135,6 +142,7 @@ def is_adjudicated(path: str, finding: dict[str, object], line: str) -> bool:
             or GIT_REVISION_FIELD_RE.search(line)
             or ACTION_PIN_RE.search(line)
             or ACTION_EXPECTATION_RE.search(line)
+            or RENDERED_DIGEST_META_RE.search(line)
             or reviewed_commit
         )
     if finding_type == "Secret Keyword":

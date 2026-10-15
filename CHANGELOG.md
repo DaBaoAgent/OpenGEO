@@ -26,9 +26,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `drafts/<NN>-<slug>/` keeps the gated working package (article, images, hero, HTML, PDF,
   `kb/`, `preview/`, `review.md`) and `out/<NN>-<slug>/` holds the publish set, which is the
   article `.md` plus the numbered `.jpg` images and nothing else.
-- Track `out/<NN>-<slug>/` and keep ignoring `drafts/<NN>-<slug>/`: the publish set is
-  the article and its images and is the product, while the working package holds company
-  originals, the raw source documents behind each claim and rendered previews.
+- Track both content folders: `out/<NN>-<slug>/` is the publish set and the product,
+  `drafts/<NN>-<slug>/` is the working package that carries company originals and the raw
+  source documents behind each claim, so the repository has to stay private.
+- Adjudicate the `blog-source-sha256` and `blog-body-sha256` meta tags `blog_render.py`
+  stamps into the HTML: they are content digests of the page, not credentials, and
+  without the rule a tracked working package fails the secret scan.
 - Add `scripts/export_publish.py`, which builds the publish set from the working package,
   turns the hero into `01-cover.jpg`, and refuses a draft folder that is not named
   `<NN>-<slug>`, an image that is not flat and numbered in ascending article order, or a

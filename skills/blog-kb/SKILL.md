@@ -128,9 +128,10 @@ Recover by re-running `--init-review-nonce` and dispatching a fresh
 `blog-reviewer`, the repair the delivery contract already prescribes for a
 stale nonce.
 
-`drafts/` is ignored by Git, because the working package carries company
-originals, the raw source documents behind each claim and rendered previews.
-`out/` is tracked: the publish set is the product.
+Both folders are tracked: the publish set is the product, and the working
+package is the evidence a claim can be audited against. Keep the repository
+private, because the working package carries company originals and the raw
+source documents behind each claim.
 
 
 ## The evidence bundle

@@ -85,8 +85,16 @@ python3 scripts/export_publish.py --draft drafts/<NN>-<slug>
 The exporter refuses a draft folder that is not named `<NN>-<slug>`, an image
 reference that is not flat and numbered in ascending article order, and an
 existing publish folder holding anything it did not create, unless `--force` is
-passed. Renderer placeholders such as `[TOC]` are dropped from the published
-copy only, because the draft keeps them for `blog_render.py`.
+passed.
+
+The published copy is rewritten for a surface that takes text and images and
+renders no markdown: YAML frontmatter and renderer placeholders are dropped,
+`<img>` tags become labelled insertion points, a numeric table becomes a
+wrapped series per column and any other table becomes one labelled bullet per
+row, blockquote markers, inline code spans and internal file paths are removed.
+Every image gets a marker naming its file and a `图注：` line to paste under it,
+and the cover is named directly below the headline. The draft keeps all of it,
+because `blog_render.py` and the review read the draft.
 
 Moving a package after it has been reviewed breaks the review binding: the
 Gate 4 verifier state is keyed on the absolute folder path, so a relocated

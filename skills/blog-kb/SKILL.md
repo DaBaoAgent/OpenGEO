@@ -116,7 +116,10 @@ A delivered article occupies two sibling folders that share one sequence number
 
 Take the next free number, never renumber a delivered package, and build the
 publish set with `scripts/export_publish.py --draft drafts/<NN>-<slug>` instead
-of copying files by hand, so the two folders cannot drift apart.
+of copying files by hand, so the two folders cannot drift apart. The published
+copy is what a platform accepts: no frontmatter, no `<img>` tags, no markdown
+tables, no internal paths, and one labelled marker per image naming the file to
+insert at that point.
 
 Assign the final path before step 4 of the delivery sequence issues the review
 nonce. Gate 4 keys its verifier state on the package's absolute path, so a

@@ -128,9 +128,9 @@ Recover by re-running `--init-review-nonce` and dispatching a fresh
 `blog-reviewer`, the repair the delivery contract already prescribes for a
 stale nonce.
 
-Both folders are ignored by Git. A package carries company originals, the raw
-source documents behind each claim and rendered previews, and all of it is
-either re-downloadable or rebuildable.
+`drafts/` is ignored by Git, because the working package carries company
+originals, the raw source documents behind each claim and rendered previews.
+`out/` is tracked: the publish set is the product.
 
 
 ## The evidence bundle

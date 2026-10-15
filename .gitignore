@@ -63,13 +63,12 @@ output/
 demo-output/
 .raw/
 
-# Company content packages. drafts/<NN>-<slug>/ is the gated working
-# package (company originals, the raw source documents behind each claim,
-# rendered previews); out/<NN>-<slug>/ is the publish set derived from it.
-# Both are rebuildable through scripts/kb_client.py ground, and the rendered
-# HTML trips scripts/check_secrets.py. See docs/COMPANY-KB.md.
+# Company content packages. drafts/<NN>-<slug>/ is the gated working package:
+# it holds company originals, the raw source documents behind each claim and the
+# rendered previews, so it stays out of version control. out/<NN>-<slug>/ is the
+# publish set derived from it, which is the article and its images and is
+# tracked, because that folder is the product. See docs/COMPANY-KB.md.
 drafts/
-out/
 
 # Working documents
 definitive-resesarch-blueprint-for-claude-blog.md

@@ -102,12 +102,13 @@ package reports a missing verifier state and needs a fresh
 `blog_preflight.py --init-review-nonce` and a fresh `blog-reviewer` dispatch
 before it passes again.
 
-Both folders are ignored by Git. A package holds company originals, the raw
-source documents behind each claim and rendered previews, and all of it is
-either re-downloadable or rebuildable. `kb-evidence.json` is the recipe.
-Tracking either folder would also fail `scripts/check_secrets.py`, because the
-rendered HTML carries `blog-source-sha256` and `blog-body-sha256` meta tags that
-its entropy detector flags with no adjudication rule.
+`drafts/` is ignored by Git and `out/` is tracked. The working package holds
+company originals, the raw source documents behind each claim and rendered
+previews, so it stays local, and `kb-evidence.json` is the recipe that rebuilds
+it. The publish set is the product, so the article and its images are
+committed. The rendered HTML is one reason the working package stays out:
+`scripts/check_secrets.py` has no adjudication rule for the `blog-source-sha256`
+and `blog-body-sha256` meta tags it carries.
 
 
 ## Workflow

@@ -63,6 +63,12 @@ output/
 demo-output/
 .raw/
 
+# Company content packages (out/<NN>-<slug>/): re-downloadable company
+# assets, rendered previews and the raw source documents behind each
+# claim. Rebuild the evidence with scripts/kb_client.py ground;
+# see docs/COMPANY-KB.md. Not tracked, so it never reaches a remote.
+out/
+
 # Working documents
 definitive-resesarch-blueprint-for-claude-blog.md
 .github-audit/

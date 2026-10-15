@@ -98,6 +98,27 @@ python3 "${CLAUDE_BLOG_SCRIPTS_DIR:-${CLAUDE_SKILL_DIR}/../../scripts}/kb_client
 `--json <path>` is accepted broadly and dumps the raw server payload, which is
 what to reach for when a shape is not what this document claims.
 
+## Output location
+
+Delivery packages live under `out/<NN>-<slug>/` at the project root: `NN` is a
+two-digit sequence number assigned in delivery order, `<slug>` is the post's
+slug, and `out/01-kunshan-suzhou-wheelchair-rental/` is the first package. The
+delivery contract calls the draft folder `D`; in this project `D` is the package
+folder, which puts the grounding in `out/<NN>-<slug>/kb/` beside the article,
+its review and its previews. Take the next free number, and never renumber a
+package that has already been delivered.
+
+Assign the final path before step 4 of the delivery sequence issues the review
+nonce. Gate 4 keys its verifier state on the package's absolute path, so a
+package moved after its review fails that gate with a missing verifier state.
+Recover by re-running `--init-review-nonce` and dispatching a fresh
+`blog-reviewer`, which is the repair the delivery contract already prescribes
+for a stale nonce.
+
+Packages are not version controlled. The root `.gitignore` ignores `out/`,
+because a package carries re-downloadable company assets, rendered previews and
+the raw source documents behind each claim.
+
 ## The evidence bundle
 
 `ground` is the whole point of the skill: one command turns a topic into
@@ -132,7 +153,7 @@ detect a source that changed underneath a draft.
 python3 kb_client.py ground \
   --query "轮椅租赁 价格 流程" --query "昆山 苏州 门店" \
   --kb jks-product,marketing --top-k 6 \
-  --out drafts/<slug>/kb --pull-assets --resolve-assets --asset-limit 12
+  --out out/<NN>-<slug>/kb --pull-assets --resolve-assets --asset-limit 12
 ```
 
 ## Workflow

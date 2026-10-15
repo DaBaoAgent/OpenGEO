@@ -702,7 +702,8 @@ BODY_END_MARKER = b"<!--bs-body:end-->"
 GENERATED_LINK_ATTR = "data-bs-generated"
 RENDERER_FRONTMATTER_HINT = (
     "The renderer reads these frontmatter keys: title, description, date, author (required); "
-    "slug, canonical, site_name, lang, og_image_alt, kicker, tags (optional)"
+    "slug, canonical, site_name, lang, og_image_alt, kicker, tags, author_type, "
+    "breadcrumb_home (optional)"
 )
 CANONICAL_FIX = (
     "add `canonical: https://your-site.example/blog/<slug>/` to the .md frontmatter and re-run "
@@ -1301,6 +1302,46 @@ def _describe_overflows(overflows: list[dict[str, Any]], limit: int = 3) -> str:
     return "; ".join(parts) + more + ". Shrink or reflow that element, or widen the container"
 
 
+# A Chromium-based browser a stock desktop already has. Used only when the
+# patchright/playwright browser download is missing: Gate 3 must render the real
+# page, and refusing to verify because a bundled revision is absent would block
+# delivery for an environment reason instead of a content one.
+SYSTEM_BROWSER_PATHS = (
+    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+)
+
+
+def _system_browser_path() -> Optional[str]:
+    """Return an installed Chromium-based browser path, or None."""
+    for candidate in SYSTEM_BROWSER_PATHS:
+        if Path(candidate).is_file():
+            return candidate
+    return None
+
+
+def _launch_browser(playwright_obj: Any) -> Any:
+    """Launch the bundled browser, falling back to a locally installed one.
+
+    The bundled revision stays the first choice. When its download is missing
+    the launcher raises before any page loads, so an installed Edge or Chrome
+    renders the same page instead. With no fallback available the original
+    error propagates, keeping the actionable "run patchright install" message.
+    """
+    chromium = playwright_obj.chromium
+    try:
+        return chromium.launch()
+    except Exception:
+        fallback = _system_browser_path()
+        if fallback is None:
+            raise
+        return chromium.launch(executable_path=fallback)
+
+
 def gate_3_visual_verification(draft_dir: Path, slug: str | None = None) -> dict:
     """Render the .html via patchright (or playwright); screenshot at 3
     widths; check SVG bboxes, dark mode, console errors, JSON-LD."""
@@ -1544,7 +1585,7 @@ def gate_3_visual_verification(draft_dir: Path, slug: str | None = None) -> dict
 
     try:
         with sync_playwright() as p:
-            browser = p.chromium.launch()
+            browser = _launch_browser(p)
             for vp in VIEWPORTS:
                 context = browser.new_context(
                     viewport={"width": vp["width"], "height": vp["height"]},

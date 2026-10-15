@@ -222,9 +222,20 @@ def _fm_with(extra):
     return FRONTMATTER.replace("slug: wave-three\n", "slug: wave-three\n" + extra)
 
 
+def _blogposting_node(payload):
+    """Return the BlogPosting node from a bare payload or an @graph wrapper."""
+    if isinstance(payload, dict) and isinstance(payload.get("@graph"), list):
+        return next(
+            (node for node in payload["@graph"] if isinstance(node, dict) and node.get("@type") == "BlogPosting"),
+            payload,
+        )
+    return payload
+
+
 def _jsonld(page):
     import json
-    return json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S).group(1))
+    payload = json.loads(re.search(r'<script type="application/ld\+json">(.*?)</script>', page, re.S).group(1))
+    return _blogposting_node(payload)
 
 
 def test_last_updated_becomes_date_modified_meta_and_visible_line(tmp_path):

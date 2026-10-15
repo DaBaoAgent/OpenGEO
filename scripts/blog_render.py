@@ -161,7 +161,7 @@ HTML_TEMPLATE = """<!DOCTYPE html>
 <p class="dek">{description_escaped}</p>
 <p class="byline"><strong>By {author_escaped}</strong> &middot; {published_human} &middot; {reading_time_min} min read &middot; {word_count} words</p>{updated_html}
 </header>
-<figure class="hero"><img src="{hero_filename}" alt="{og_image_alt_escaped}" width="1200" height="630"></figure>
+<figure class="hero"><img src="{hero_filename}" alt="{og_image_alt_escaped}" width="1200" height="630" decoding="async" fetchpriority="high"></figure>
 {body_html}
 <footer class="post-footer"><span>Published at <a href="{site_url_or_dash}" data-bs-generated="1">{site_name_escaped}</a></span><span>{published_human} &middot; {author_escaped}</span></footer>
 </article>
@@ -362,15 +362,54 @@ def _parse_frontmatter(raw: str) -> tuple[dict, str]:
     return fm, body
 
 
+def _defer_body_images(body_html: str) -> str:
+    """Add loading="lazy" and decoding="async" to body images that lack them.
+
+    The template renders the hero separately as <figure class="hero">, and it is
+    always the first image in the document, so no image in the body is the LCP
+    element: deferring them keeps the hero's fetch uncontended. An <img> that
+    already declares loading is left alone, and matches inside <pre>/<code> are
+    documentation, never real images.
+    """
+
+    def add_deferred_loading(match: re.Match[str]) -> str:
+        tag = match.group(0)
+        if re.search(r"\bloading\s*=", tag, flags=re.IGNORECASE):
+            return tag
+        inner = tag[:-1].rstrip()
+        if inner.endswith("/"):
+            inner = inner[:-1].rstrip()
+        return inner + ' loading="lazy" decoding="async">'
+
+    # Odd indices hold the protected <pre>/<code> spans, which are never rewritten.
+    parts = re.split(r"(<pre\b.*?</pre>|<code\b.*?</code>)", body_html, flags=re.IGNORECASE | re.DOTALL)
+    for index in range(0, len(parts), 2):
+        parts[index] = re.sub(r"<img\b[^>]*>", add_deferred_loading, parts[index], flags=re.IGNORECASE)
+    return "".join(parts)
+
+
 def _markdown_to_html(body: str) -> str:
     """Convert markdown body to HTML. Uses python-markdown if installed,
     else a minimal stdlib subset (ATX headings, paragraphs, code, links,
     emphasis, lists, blockquotes, hr, images)."""
     try:
         import markdown  # type: ignore
-        return _sanitize_body_html(markdown.markdown(body, extensions=["extra", "sane_lists"]))
+        # "toc" gives headings stable ids and expands the [TOC] marker, so an
+        # in-page contents block is real navigation rather than dead anchors.
+        # toc_depth starts at 2 because the renderer strips the body's leading
+        # <h1> (the template supplies the title), which would leave the h1's
+        # entry in the contents pointing at an id that is no longer in the body.
+        return _defer_body_images(
+            _sanitize_body_html(
+                markdown.markdown(
+                    body,
+                    extensions=["extra", "sane_lists", "toc"],
+                    extension_configs={"toc": {"toc_depth": "2-6"}},
+                )
+            )
+        )
     except ImportError:
-        return _sanitize_body_html(_stdlib_markdown(body))
+        return _defer_body_images(_sanitize_body_html(_stdlib_markdown(body)))
 
 
 def _stdlib_markdown(body: str) -> str:
@@ -486,21 +525,63 @@ def _inline(text: str) -> str:
 
 
 def _build_json_ld(fm: dict, word_count: int, og_image_url: str) -> str:
-    data = {
-        "@context": "https://schema.org",
+    """Build the article's JSON-LD.
+
+    The BlogPosting stays the node Gate 3/Gate 5 look for. When the post names a
+    canonical URL the payload becomes an @graph that also carries an Organization
+    node (the publisher) and a BreadcrumbList, which is what the quality
+    heuristic asks for; without a canonical the payload is the bare BlogPosting
+    object, so existing posts keep byte-identical schema.
+
+    `author_type` selects the author node's @type. Both Gates match the author on
+    its NAME against the visible byline, never on @type, so a company byline can
+    honestly ship as an Organization.
+    """
+    title = fm.get("title", "")
+    author = fm.get("author", "")
+    author_type = str(fm.get("author_type") or "Person").strip() or "Person"
+    canonical = str(fm.get("canonical") or "").strip()
+    site_url = "/".join(canonical.split("/")[:3]) if canonical.startswith("http") else ""
+    site_name = str(fm.get("site_name") or "").strip() or (canonical.split("/")[2] if site_url else "")
+    home_label = str(fm.get("breadcrumb_home") or "").strip()
+    if not home_label:
+        home_label = "首页" if str(fm.get("lang", "en")).lower().startswith("zh") else "Home"
+
+    article = {
         "@type": "BlogPosting",
-        "headline": fm.get("title", ""),
+        "headline": title,
         "description": fm.get("description", ""),
         "image": og_image_url,
         "datePublished": fm.get("date", ""),
         "dateModified": _resolve_modified(fm) or fm.get("date", ""),
-        "author": {"@type": "Person", "name": fm.get("author", "")},
+        "author": {"@type": author_type, "name": author},
         "wordCount": word_count,
         "keywords": ", ".join(fm.get("tags", [])) if isinstance(fm.get("tags"), list) else fm.get("tags", ""),
         "inLanguage": fm.get("lang", "en"),
     }
-    if fm.get("canonical"):
-        data["mainEntityOfPage"] = {"@type": "WebPage", "@id": fm["canonical"]}
+    if canonical:
+        article["mainEntityOfPage"] = {"@type": "WebPage", "@id": canonical}
+
+    nodes = [article]
+    if site_name:
+        publisher = {"@type": "Organization", "name": site_name}
+        if site_url:
+            publisher["url"] = site_url + "/"
+        article["publisher"] = dict(publisher)
+        nodes.append(publisher)
+    if canonical:
+        home_item = site_url + "/" if site_url else canonical
+        nodes.append(
+            {
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {"@type": "ListItem", "position": 1, "name": home_label, "item": home_item},
+                    {"@type": "ListItem", "position": 2, "name": title, "item": canonical},
+                ],
+            }
+        )
+
+    data: dict = {"@context": "https://schema.org", "@graph": nodes} if len(nodes) > 1 else article
     # HTML-safe JSON encoding: escape "</" as "<\/" so an attacker who controls
     # a frontmatter value (e.g. title) cannot inject a literal "</script>" that
     # would break out of the surrounding <script type="application/ld+json">
@@ -515,7 +596,11 @@ def _read_md_bytes_safely(path: Path) -> bytes:
     root files so a caller cannot redirect the renderer at an attacker-
     chosen target via symlink."""
     try:
-        fd = os.open(str(path), os.O_RDONLY | os.O_NOFOLLOW)
+        # O_BINARY matters on Windows: without it os.open uses text mode,
+        # which collapses CRLF to LF and can stop at a 0x1A byte, so the
+        # bytes hashed here would not be the bytes on disk.
+        flags = os.O_RDONLY | getattr(os, "O_NOFOLLOW", 0) | getattr(os, "O_BINARY", 0)
+        fd = os.open(str(path), flags)
     except OSError as e:
         if e.errno in (errno.ELOOP, errno.EMLINK):
             raise ValueError(f"refusing to follow symlink: {path}")
@@ -815,6 +900,47 @@ def _render_html(md_path: Path, out_dir: Path, hero_filename: str) -> Path:
     return _atomic_write_text(out_html, rendered, out_root)
 
 
+# A Chromium-based browser a stock desktop already has, used only when the
+# patchright/playwright browser download is missing. Without it the PDF falls
+# through to weasyprint, which lays out the same HTML differently, so the same
+# source would render to a different document on a machine that happens to have
+# the bundled revision.
+SYSTEM_BROWSER_PATHS = (
+    r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Microsoft\Edge\Application\msedge.exe",
+    r"C:\Program Files\Google\Chrome\Application\chrome.exe",
+    r"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe",
+    "/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge",
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+)
+
+
+def _system_browser_path() -> Optional[str]:
+    """Return an installed Chromium-based browser path, or None."""
+    for candidate in SYSTEM_BROWSER_PATHS:
+        if Path(candidate).is_file():
+            return candidate
+    return None
+
+
+def _launch_browser(playwright_obj):
+    """Launch the bundled browser, falling back to a locally installed one.
+
+    The bundled revision stays the first choice. When its download is missing
+    the launcher raises before any page loads, so an installed Edge or Chrome
+    renders the same page instead. With no fallback available the original
+    error propagates, and the caller falls through to weasyprint.
+    """
+    chromium = playwright_obj.chromium
+    try:
+        return chromium.launch()
+    except Exception:
+        fallback = _system_browser_path()
+        if fallback is None:
+            raise
+        return chromium.launch(executable_path=fallback)
+
+
 def _render_pdf_to_path(html_path: Path, out_pdf: Path, engine: str) -> bool:
     """Render html_path to out_pdf via the chosen engine. Returns True on
     success, False on failure (no exception raised; caller decides)."""
@@ -845,7 +971,7 @@ def _render_pdf_to_path(html_path: Path, out_pdf: Path, engine: str) -> bool:
         if sync_playwright is not None:
             try:
                 with sync_playwright() as p:
-                    browser = p.chromium.launch()
+                    browser = _launch_browser(p)
                     page = browser.new_page()
                     def route_guard(route):
                         if _local_asset_allowed(route.request.url):

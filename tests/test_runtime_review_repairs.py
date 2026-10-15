@@ -54,13 +54,23 @@ def _render_fixture(directory, renderer):
     return directory / 'post.html'
 
 
+def _blogposting_node(payload):
+    """Return the BlogPosting node from a bare payload or an @graph wrapper."""
+    if isinstance(payload, dict) and isinstance(payload.get('@graph'), list):
+        return next(
+            (node for node in payload['@graph'] if isinstance(node, dict) and node.get('@type') == 'BlogPosting'),
+            payload,
+        )
+    return payload
+
+
 def _schema_edit(path, edit):
     import re
     raw = path.read_text()
-    match = re.search(r'(<script type="application/ld\+json">)(.*?)(</script>)', raw, re.S)
-    schema = json.loads(match.group(2))
-    edit(schema)
-    path.write_text(raw[:match.start(2)] + json.dumps(schema) + raw[match.end(2):])
+    match = re.search(r'((<script type="application/ld\+json">)(.*?)(</script>))', raw, re.S)
+    schema = json.loads(match.group(3))
+    edit(_blogposting_node(schema))
+    path.write_text(raw[:match.start(3)] + json.dumps(schema) + raw[match.end(3):])
 
 
 @pytest.mark.parametrize('field,value', [

@@ -91,6 +91,94 @@ python3 skills/blog-image/scripts/validate_image_setup.py
 
 ---
 
+## Company Knowledge Base MCP (company_kb)
+
+The company knowledge base grounds drafts in first-hand company records rather
+than the open web. It answers what the company sells, rents, promises and
+documents; `blog-researcher` and `blog-discourse` still cover what the market
+and the public say.
+
+One bearer token covers two transports, because the MCP surface carries no
+bytes:
+
+| Transport | Endpoint | Carries |
+|---|---|---|
+| MCP over HTTP | `http://192.168.1.79:8788/mcp` | Text: `kb_search`, `kb_read`, `kb_list`, `kb_stat`, `kb_write`, `task_*` |
+| File service | `http://192.168.1.79:8789/api` | Binaries: images, video, originals under `files`, `archive`, `inbox` |
+
+Text and images are both required for company content: a specification comes
+from a document and the photograph of the product comes from the file service.
+
+### Configuration
+
+```json
+{
+  "mcpServers": {
+    "company_kb": {
+      "type": "http",
+      "url": "http://192.168.1.79:8788/mcp",
+      "headers": { "Authorization": "Bearer ${COMPANY_KB_TOKEN}" }
+    }
+  }
+}
+```
+
+Export `COMPANY_KB_TOKEN` in the shell. The tracked template
+`.mcp.example.json` uses env expansion only and never carries a literal token,
+so the configuration is safe to commit and the credential is not.
+
+Off-site over Tailscale, swap the host for `100.75.154.83` and keep both hosts
+in `NO_PROXY`. Both clients in `scripts/kb_client.py` disable proxying
+explicitly, so `NO_PROXY` is a second line of defence rather than a
+requirement.
+
+### What It Enables
+
+| Feature | Without company_kb | With company_kb |
+|---------|--------------------|-----------------|
+| Product specifications | Model memory or a competitor's page | The company's own product documents, with `doc_id` |
+| Prices and commercial terms | Omitted or guessed | Quoted with the source document and its update date |
+| Product photography | Stock or generated imagery | The actual product, downloaded from the file service |
+| Visual plan | Generic illustrations | Real install, packaging and detail shots |
+| Provenance | None | `doc_id` per claim, `sha256` per asset |
+
+### Usage
+
+The client is `scripts/kb_client.py`, wrapped for plugin and standalone layouts
+at `skills/blog-kb/scripts/kb_client.py`. The `blog-kb` sub-skill documents the
+workflow and is internal, like `blog-chart`; the orchestrator invokes it while
+running `blog-write`, `blog-brief` and `blog-geo` when the project uses the
+company corpus.
+
+```bash
+# Reachability
+python3 scripts/kb_client.py probe
+
+# One evidence bundle: documents, citations and downloaded assets
+python3 scripts/kb_client.py ground \
+  --query "轮椅租赁 价格 流程" --query "昆山 苏州 门店" \
+  --kb jks-product,marketing --top-k 6 \
+  --out drafts/<slug>/kb --pull-assets --resolve-assets
+
+# Locate a product photo by path keyword, and download the matches
+python3 scripts/kb_client.py find \
+  --keyword 自提 --ext jpg,png,webp --path "2   轮椅租赁图文" \
+  --out drafts/<slug>/assets
+```
+
+`ground` writes `kb-evidence.json` plus `documents/` and `assets/`. Every
+claim in the draft pairs with a `doc_id`, and every image carries the
+`sha256` it was downloaded with. See [COMPANY-KB.md](COMPANY-KB.md) for the
+full workflow, the evidence discipline and the failure modes.
+
+### Requirements
+
+- Network reachability to the knowledge base host (`NO_PROXY` on the LAN)
+- A current `COMPANY_KB_TOKEN`
+- No third-party Python package: the client is stdlib only
+
+---
+
 ## DataForSEO MCP (Recommended)
 
 **DataForSEO is the recommended MCP integration for `claude-blog`.** It provides

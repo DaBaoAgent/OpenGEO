@@ -13,7 +13,7 @@
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License: MIT">
   <img src="https://img.shields.io/badge/Python-3.11%2B-blue" alt="Python 3.11+">
   <img src="https://img.shields.io/badge/Skill%20Dirs-32-orange" alt="Skill directories: 32">
-  <img src="https://img.shields.io/badge/Sub--Skills-31-orange" alt="Sub-skills: 31">
+  <img src="https://img.shields.io/badge/Sub--Skills-32-orange" alt="Sub-skills: 32">
   <img src="https://img.shields.io/badge/Commands-30-blueviolet" alt="User-facing commands: 30">
   <img src="https://img.shields.io/badge/Tests-pytest%20suite-brightgreen" alt="Tests: pytest suite, run it for the current count">
 </p>
@@ -49,7 +49,7 @@ The publishing workflow is documented in
 
 claude-blog is a full-lifecycle blog engine for strategy, briefs, outlines, writing, rewriting, analysis, schema, AI citation readiness, site audits, topic clusters, multilingual publishing, audio narration, and content decay detection.
 
-Current v2.3.1 shape: **32 skill directories = 1 orchestrator + 31 sub-skills; 30 user-facing /blog commands (`blog-chart` is internal, not a command).** It also includes 5 specialized agents, repository consistency and public-release validators, 22 core references, 12 templates, a pytest suite (run `python3 -m pytest --collect-only -q | tail -1` for the current count), and the bundled Claude Blog Brain at `./brain`.
+Current v2.3.1 shape: **33 skill directories = 1 orchestrator + 32 sub-skills; 30 user-facing /blog commands (`blog-chart` and `blog-kb` are internal, not commands).** It also includes 5 specialized agents, repository consistency and public-release validators, 22 core references, 12 templates, a pytest suite (run `python3 -m pytest --collect-only -q | tail -1` for the current count), and the bundled Claude Blog Brain at `./brain`.
 
 Every draft ships as an artifact folder with the markdown source, rendered HTML, PDF, real `hero.<ext>`, 3 viewport screenshots, `review.md`, and `preflight-report.json`. The renderer uses XSS-safe JSON-LD handling, dark-mode-aware CSS, and the same source for every output format.
 
@@ -102,13 +102,13 @@ The orchestrator in `skills/blog/SKILL.md` parses `/blog` input, detects the tar
 
 | Layer | Count | Where |
 |---|---:|---|
-| Skill directories | 32 | `skills/blog` plus `skills/blog-*` |
+| Skill directories | 33 | `skills/blog` plus `skills/blog-*` |
 | Orchestrator | 1 | `skills/blog/SKILL.md` |
-| Sub-skills | 31 | `skills/blog-*/SKILL.md` |
+| Sub-skills | 32 | `skills/blog-*/SKILL.md` |
 | User-facing `/blog` commands | 30 | `skills/blog/SKILL.md` routing table |
-| Internal-only sub-skill | 1 | `skills/blog-chart/SKILL.md` |
+| Internal-only sub-skills | 2 | `skills/blog-chart/SKILL.md`, `skills/blog-kb/SKILL.md` |
 | Specialized agents | 5 | `agents/blog-*.md` |
-| Root scripts | 22 | `scripts/*.py` |
+| Root scripts | 23 | `scripts/*.py` |
 | References | 22 | `skills/blog/references/*.md` |
 | Templates | 12 | `skills/blog/templates/*.md` |
 | Tests | pytest suite | `tests/` (`python3 -m pytest --collect-only -q \| tail -1` for the count) |
@@ -138,10 +138,10 @@ Hero image ladder: Banana MCP, direct Gemini API, premium stock APIs, then Openv
 ## Sub-Skill Ecosystem
 
 <p align="center">
-  <img src="assets/diagrams/03-sub-skill-map-A.svg" alt="claude-blog sub-skill ecosystem: one orchestrator and 31 sub-skills in eight clusters (30 user-facing commands plus the internal blog-chart skill), grouped by writing, strategy, quality, AI and search, multilingual, research, media, and distribution workflows" width="100%">
+  <img src="assets/diagrams/03-sub-skill-map-A.svg" alt="claude-blog sub-skill ecosystem: one orchestrator and 32 sub-skills in eight clusters (30 user-facing commands plus the internal blog-chart and blog-kb skills), grouped by writing, strategy, quality, AI and search, multilingual, research, media, and distribution workflows" width="100%">
 </p>
 
-The ecosystem is intentionally modular. Most commands are user-facing sub-skills. `blog-chart` is internal-only, and `blog-image` can be called both by the user and internally by write and rewrite workflows.
+The ecosystem is intentionally modular. Most commands are user-facing sub-skills. `blog-chart` and `blog-kb` are internal-only, and `blog-image` can be called both by the user and internally by write and rewrite workflows.
 
 ## Commands
 
@@ -181,7 +181,7 @@ First run: `/blog strategy <niche>` to scope the site, `/blog write <topic>` to 
 | `/blog style learn <paths>` | Learn author voice profile from 5-10 posts (feeds blog-write and blog-persona) |
 | `/blog decay <current-gsc> <previous-gsc>` | Detect content decay: flag 20%+ QoQ traffic decline from GSC exports |
 
-`/blog update` is a freshness alias routed to `blog-rewrite`; the project count remains 30 user-facing `/blog` commands. `blog-chart` remains internal-only.
+`/blog update` is a freshness alias routed to `blog-rewrite`; the project count remains 30 user-facing `/blog` commands. `blog-chart` and `blog-kb` remain internal-only.
 
 Full reference: [`docs/COMMANDS.md`](docs/COMMANDS.md).
 
@@ -483,6 +483,7 @@ The recommended flow downloads the installer as a file so you can inspect it bef
 - [Templates](docs/TEMPLATES.md): Template reference and customization.
 - [Troubleshooting](docs/TROUBLESHOOTING.md): Common issues and fixes.
 - [MCP Integration](docs/MCP-INTEGRATION.md): Optional MCP server setup.
+- [Company KB Grounding](docs/COMPANY-KB.md): Grounding drafts in the company knowledge base.
 - [Demo](docs/DEMO.md): Worked end-to-end example.
 
 ## How To Cite

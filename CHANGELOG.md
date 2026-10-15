@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Ground drafts in the company knowledge base: `scripts/kb_client.py` (stdlib only; MCP text
+  over `:8788`, binaries over `:8789`), the internal `blog-kb` sub-skill that wraps it,
+  `docs/COMPANY-KB.md`, and the `company_kb` server in `.mcp.example.json`.
+  `ground --pull-assets --resolve-assets` writes `drafts/<slug>/kb/` with a `doc_id`/`sha256`
+  trail for every document and image, and recovers image references whose recorded `原件：`
+  path belongs to a different tree; a name several files share is reported as `ambiguous`
+  rather than guessed.
+- Add `author_type` and `breadcrumb_home` frontmatter keys, and render JSON-LD as one
+  `@graph` carrying BlogPosting, Organization and BreadcrumbList.
+- Expand `[TOC]` into a real in-page contents block, and defer body images with
+  `loading="lazy"`/`decoding="async"` while the hero keeps `fetchpriority="high"`.
+- Fall back to an installed Edge or Chrome when the bundled patchright/playwright browser
+  is missing, so Gate 3 reports content defects instead of a missing download.
+
+### Fixed
+
+- Hash source bytes with `O_BINARY` on Windows: text mode collapsed CRLF and could stop at a
+  `0x1A` byte, so the recorded digest could disagree with the file on disk.
+
 ### Changed
 
 - Turn off Dependabot version-update PRs (`open-pull-requests-limit: 0`). Hash-locked pip bumps need a maintainer relock, so the PRs only added notifications. Vulnerability alerts stay on.

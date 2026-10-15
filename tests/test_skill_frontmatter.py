@@ -24,8 +24,12 @@ def skill(**updates):
 def test_maintained_bundle_uses_one_yaml_and_policy_validator():
     assert validate_bundle(ROOT) == []
     values = {path.parent.name: parse_frontmatter(path.read_text())["user-invocable"] for path in (ROOT / "skills").glob("*/SKILL.md")}
-    assert len(values) == 32
+    assert len(values) == 33
+    # Two internal capabilities: blog-chart renders charts for blog-write, and
+    # blog-kb grounds drafts in the company knowledge base. Neither is a
+    # user-facing /blog command.
     assert values.pop("blog-chart") is False
+    assert values.pop("blog-kb") is False
     assert list(values.values()) == [True] * 31
     assert len(list((ROOT / "agents").glob("*.md"))) == 5
 

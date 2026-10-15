@@ -30,8 +30,8 @@ The Claude Blog Brain is vendored at `./brain` as a self-contained, evidence-gat
               |                                            |
               v                                            v
 +----------------------------+            +---------------------------+
-|   32 Skill Directories     |            |    On-Demand References   |
-|  1 orchestrator + 31       |            |  skills/blog/references/*.md     |
+|   33 Skill Directories     |            |    On-Demand References   |
+|  1 orchestrator + 32       |            |  skills/blog/references/*.md     |
 |  sub-skills                |            |  skills/blog/templates/*.md      |
 |  write    rewrite          |            |                           |
 |  analyze  brief            |            |  22 references loaded     |
@@ -48,12 +48,12 @@ The Claude Blog Brain is vendored at `./brain` as a self-contained, evidence-gat
 |  localize locale-audit     |
 |  brand    discourse        |
 |  style    decay            |
-|  chart (internal)          |
+|  chart  kb (internal)      |
 +------+----------+----------+
        |          |
        v          v
 +------------------+  +------------------------+
-|  5 Subagents     |  |  22 root-level Scripts  |
+|  5 Subagents     |  |  23 root-level Scripts  |
 |  agents/*.md     |  |  scripts/*.py          |
 |                  |  |                        |
 |  blog-researcher |  |  analyze_blog          |
@@ -93,7 +93,7 @@ The entry point for all `/blog` commands. Responsibilities:
 The orchestrator is a Claude Code skill with YAML frontmatter defining its
 name, description, trigger phrases, and allowed tools.
 
-### 2. Skill Directories (32 total: 1 orchestrator + 31 sub-skills; 30 user-facing commands)
+### 2. Skill Directories (33 total: 1 orchestrator + 32 sub-skills; 30 user-facing commands)
 
 **Location**: `skills/blog-*/SKILL.md` (and `skills/blog/SKILL.md` for the orchestrator)
 
@@ -119,6 +119,7 @@ Each sub-skill is a standalone Claude Code skill with its own:
 | blog-geo | AI citation optimization audit | v1.0.0 |
 | blog-audit | Full-site blog health assessment | v1.0.0 |
 | blog-chart | Inline SVG charts (internal-only, invoked by write/rewrite) | v1.0.0 |
+| blog-kb | Company knowledge base grounding: MCP text evidence plus file-service assets (internal-only, invoked by write/brief/geo) | v2.3.2 |
 | blog-image | AI image generation via Gemini (nanobanana-mcp) | v1.4.0 |
 | blog-cannibalization | Keyword overlap detection across posts | v1.4.x |
 | blog-factcheck | Statistics verification against cited sources | v1.4.x |
@@ -189,11 +190,11 @@ Structural templates for different content types. Each template defines
 section structure, word count targets, and format-specific guidance.
 See [TEMPLATES.md](TEMPLATES.md) for the full reference.
 
-### 6. Root-Level Python Scripts (22)
+### 6. Root-Level Python Scripts (23)
 
 **Location**: `scripts/*.py`
 
-Twenty-two Python helpers live at the repository root (count them with
+Twenty-three Python helpers live at the repository root (count them with
 `ls scripts/*.py | wc -l`; `scripts/windows_installer_ownership.ps1` is the
 PowerShell twin of the ownership engine and is not counted). They support the
 orchestrator, the delivery contract, the installers and the CI checks.
@@ -216,6 +217,7 @@ dependencies are stdlib-only or narrowly pinned.
 | `discourse_research.py` | Discourse-brief synthesis from SERP JSON; depth-bounded parsing; path-traversal guards | v1.8.0 |
 | `generate_hero.py` | Hero image ladder: Banana MCP -> Gemini API -> Unsplash/Pexels/Pixabay -> Openverse | v1.9.0 |
 | `installer_ownership.py` | Shared Unix legacy/v2 ownership verification, migration and rollback | Unreleased |
+| `kb_client.py` | Company knowledge base client: MCP text retrieval plus file-service asset download, with one citable evidence bundle for a draft | v2.3.2 |
 | `lint_prose.py` | Fence-aware prose-hygiene linter (no em-dash, en-dash, ` -- `); CI-enforced | v1.8.4 |
 | `load_untrusted_root.py` | Code-enforced BRAND/VOICE/DISCOURSE fencing with CSPRNG nonces; O_NOFOLLOW + size cap | v1.8.3 |
 | `quality_gate.py` | Pre-commit gate: block posts scoring < 70; fail-closed on bad paths and missing frontmatter; `--select` is the pre-commit hook mode that skips Markdown files that are not blog posts | v1.10.0 |
@@ -528,11 +530,11 @@ After installation, `claude-blog` occupies this structure inside `~/.claude/`:
     └── blog-translator.md              # v1.7.0
 ```
 
-**Component counts**: 32 skill directories (1 orchestrator + 31 sub-skills);
-30 user-facing commands (`blog-chart` is internal); 5 agents (blog-researcher,
+**Component counts**: 33 skill directories (1 orchestrator + 32 sub-skills);
+30 user-facing commands (`blog-chart` and `blog-kb` are internal); 5 agents (blog-researcher,
 blog-writer, blog-seo, blog-reviewer, blog-translator); 22 references in
 `skills/blog/references/` (plus per-sub-skill references and the synced FLOW
-prompts under `skills/blog-flow/references/`); 12 content templates; 22
+prompts under `skills/blog-flow/references/`); 12 content templates; 23
 root-level Python scripts (the table in section 6; `ls scripts/*.py | wc -l`)
 plus per-sub-skill scripts under `blog-google/`, `blog-notebooklm/`,
 `blog-audio/`, `blog-image/` and `blog-flow/`. Only the reference

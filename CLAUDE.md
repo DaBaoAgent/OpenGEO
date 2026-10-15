@@ -4,8 +4,8 @@
 
 This repository contains **Claude Blog**, a Claude Code skill suite for blog content
 creation, optimization, and management. It follows the Agent Skills open standard and the
-3-layer architecture (directive, orchestration, execution). 32 skill directories
-(1 orchestrator + 31 sub-skills), 30 user-facing `/blog` commands, 5 specialized
+3-layer architecture (directive, orchestration, execution). 33 skill directories
+(1 orchestrator + 32 sub-skills), 30 user-facing `/blog` commands, 5 specialized
 subagents, 12 content templates, and 22 reference docs are dual-optimized for Google rankings
 (2026 core and spam update timeline, E-E-A-T) and AI citations (GEO/AEO). Includes FLOW framework
 integration, semantic topic-cluster planning + execution, multilingual publishing (Pro Hub
@@ -50,8 +50,9 @@ claude-blog/
   scripts/check_google_currentness.py # Google update ledger vs official feeds
   scripts/sync_google_updates.py     # Google update ledger sync into the Blog Brain
   scripts/installer_ownership.py     # Shared Unix installer ownership engine
-  # 22 scripts/*.py in total: `ls scripts/*.py | wc -l`
-  skills/                            # 32 skill directories (1 orchestrator + 31 sub-skills)
+  scripts/kb_client.py               # Company knowledge base client: MCP text + file-service assets
+  # 23 scripts/*.py in total: `ls scripts/*.py | wc -l`
+  skills/                            # 33 skill directories (1 orchestrator + 32 sub-skills)
     blog/SKILL.md                   # Main orchestrator, routing, scoring
       references/                   # 22 on-demand knowledge files (5 in v1.8.0, 1 in v1.9.0)
       templates/                    # 12 content templates
@@ -65,6 +66,9 @@ claude-blog/
     blog-seo-check/SKILL.md      # Post-writing SEO validation
     blog-schema/SKILL.md          # JSON-LD schema generation
     blog-chart/SKILL.md           # Inline SVG data visualizations
+    blog-kb/                       # Company knowledge base grounding
+      SKILL.md                    # Grounding sub-skill (internal, like blog-chart)
+      scripts/                    # Thin wrapper over scripts/kb_client.py
     blog-repurpose/SKILL.md       # Multi-platform repurposing
     blog-geo/SKILL.md             # AI citation optimization
     blog-audit/SKILL.md           # Full-site blog health assessment

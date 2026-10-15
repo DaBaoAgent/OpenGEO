@@ -1,5 +1,5 @@
 {
-  "_comment": "Template for project-local .mcp.json. Copy to .mcp.json (gitignored) and set GOOGLE_AI_API_KEY in your shell env. NEVER commit a literal API key.",
+  "_comment": "Template for project-local .mcp.json. Copy to .mcp.json (gitignored) and export the referenced variables in your shell. NEVER commit a literal API key or bearer token; every credential here is env-expanded at load time.",
   "mcpServers": {
     "nanobanana-mcp": {
       "command": "npx",
@@ -8,6 +8,14 @@
         "GOOGLE_AI_API_KEY": "${GOOGLE_AI_API_KEY}",
         "NANOBANANA_MODEL": "gemini-3.1-flash-image"
       }
+    },
+    "company_kb": {
+      "type": "http",
+      "url": "http://192.168.1.79:8788/mcp",
+      "headers": {
+        "Authorization": "Bearer ${COMPANY_KB_TOKEN}"
+      },
+      "_comment": "Company knowledge base (text). Off-site over Tailscale, swap the host for 100.75.154.83. Binaries come from the companion file service at :8789 through skills/blog-kb/scripts/kb_client.py, because this surface carries no bytes."
     }
   }
 }

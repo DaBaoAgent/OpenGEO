@@ -108,7 +108,7 @@ The orchestrator in `skills/blog/SKILL.md` parses `/blog` input, detects the tar
 | User-facing `/blog` commands | 30 | `skills/blog/SKILL.md` routing table |
 | Internal-only sub-skills | 2 | `skills/blog-chart/SKILL.md`, `skills/blog-kb/SKILL.md` |
 | Specialized agents | 5 | `agents/blog-*.md` |
-| Root scripts | 23 | `scripts/*.py` |
+| Root scripts | 24 | `scripts/*.py` |
 | References | 22 | `skills/blog/references/*.md` |
 | Templates | 12 | `skills/blog/templates/*.md` |
 | Tests | pytest suite | `tests/` (`python3 -m pytest --collect-only -q \| tail -1` for the count) |

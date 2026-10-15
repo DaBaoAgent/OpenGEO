@@ -100,24 +100,35 @@ what to reach for when a shape is not what this document claims.
 
 ## Output location
 
-Delivery packages live under `out/<NN>-<slug>/` at the project root: `NN` is a
-two-digit sequence number assigned in delivery order, `<slug>` is the post's
-slug, and `out/01-kunshan-suzhou-wheelchair-rental/` is the first package. The
-delivery contract calls the draft folder `D`; in this project `D` is the package
-folder, which puts the grounding in `out/<NN>-<slug>/kb/` beside the article,
-its review and its previews. Take the next free number, and never renumber a
-package that has already been delivered.
+A delivered article occupies two sibling folders that share one sequence number
+`NN` and one slug.
+
+- `drafts/<NN>-<slug>/` is the gated working package. It holds the article
+  `S.md`, the numbered images the article references, `hero.<ext>`, the rendered
+  `S.html` and `S.pdf`, `kb/`, `preview/`, `review.md`, `preflight-report.json`
+  and `capabilities.json`. The delivery contract calls this folder `D`, so the
+  grounding belongs in `D/kb/`.
+- `out/<NN>-<slug>/` is the publish set: `S.md` plus the numbered `.jpg` images
+  and nothing else, ready to upload. `01-cover.jpg` is the cover and the rest
+  are the body images numbered in the order the article uses them. No HTML, no
+  PDF, no evidence bundle, no review, because the publishing surface takes text
+  and images.
+
+Take the next free number, never renumber a delivered package, and build the
+publish set with `scripts/export_publish.py --draft drafts/<NN>-<slug>` instead
+of copying files by hand, so the two folders cannot drift apart.
 
 Assign the final path before step 4 of the delivery sequence issues the review
 nonce. Gate 4 keys its verifier state on the package's absolute path, so a
 package moved after its review fails that gate with a missing verifier state.
 Recover by re-running `--init-review-nonce` and dispatching a fresh
-`blog-reviewer`, which is the repair the delivery contract already prescribes
-for a stale nonce.
+`blog-reviewer`, the repair the delivery contract already prescribes for a
+stale nonce.
 
-Packages are not version controlled. The root `.gitignore` ignores `out/`,
-because a package carries re-downloadable company assets, rendered previews and
-the raw source documents behind each claim.
+Both folders are ignored by Git. A package carries company originals, the raw
+source documents behind each claim and rendered previews, and all of it is
+either re-downloadable or rebuildable.
+
 
 ## The evidence bundle
 
@@ -153,7 +164,7 @@ detect a source that changed underneath a draft.
 python3 kb_client.py ground \
   --query "轮椅租赁 价格 流程" --query "昆山 苏州 门店" \
   --kb jks-product,marketing --top-k 6 \
-  --out out/<NN>-<slug>/kb --pull-assets --resolve-assets --asset-limit 12
+  --out drafts/<NN>-<slug>/kb --pull-assets --resolve-assets --asset-limit 12
 ```
 
 ## Workflow

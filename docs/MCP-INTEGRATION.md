@@ -158,18 +158,20 @@ python3 scripts/kb_client.py probe
 python3 scripts/kb_client.py ground \
   --query "轮椅租赁 价格 流程" --query "昆山 苏州 门店" \
   --kb jks-product,marketing --top-k 6 \
-  --out out/<NN>-<slug>/kb --pull-assets --resolve-assets
+  --out drafts/<NN>-<slug>/kb --pull-assets --resolve-assets
 
 # Locate a product photo by path keyword, and download the matches
 python3 scripts/kb_client.py find \
   --keyword 自提 --ext jpg,png,webp --path "2   轮椅租赁图文" \
-  --out out/<NN>-<slug>/assets
+  --out drafts/<NN>-<slug>/assets
 ```
 
-Packages live under `out/<NN>-<slug>/` (sequence number plus post slug),
-so the evidence sits in `out/<NN>-<slug>/kb/` beside the article it supports.
-`out/` is ignored by Git: a package carries re-downloadable company originals
-and the raw source documents behind each claim.
+An article occupies two sibling folders that share a sequence number and a
+slug: `drafts/<NN>-<slug>/` is the gated working package, so the evidence sits in
+`drafts/<NN>-<slug>/kb/` beside the article it supports, and `out/<NN>-<slug>/`
+is the publish set, which is the article `.md` plus five numbered `.jpg` files
+and nothing else. Both are ignored by Git: a package carries re-downloadable
+company originals and the raw source documents behind each claim.
 
 `ground` writes `kb-evidence.json` plus `documents/` and `assets/`. Every
 claim in the draft pairs with a `doc_id`, and every image carries the

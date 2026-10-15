@@ -51,7 +51,8 @@ claude-blog/
   scripts/sync_google_updates.py     # Google update ledger sync into the Blog Brain
   scripts/installer_ownership.py     # Shared Unix installer ownership engine
   scripts/kb_client.py               # Company knowledge base client: MCP text + file-service assets
-  # 23 scripts/*.py in total: `ls scripts/*.py | wc -l`
+  scripts/export_publish.py          # Publish set: drafts/<NN>-<slug> -> out/<NN>-<slug>
+  # 24 scripts/*.py in total: `ls scripts/*.py | wc -l`
   skills/                            # 33 skill directories (1 orchestrator + 32 sub-skills)
     blog/SKILL.md                   # Main orchestrator, routing, scoring
       references/                   # 22 on-demand knowledge files (5 in v1.8.0, 1 in v1.9.0)

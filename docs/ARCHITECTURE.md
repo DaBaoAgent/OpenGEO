@@ -53,7 +53,7 @@ The Claude Blog Brain is vendored at `./brain` as a self-contained, evidence-gat
        |          |
        v          v
 +------------------+  +------------------------+
-|  5 Subagents     |  |  23 root-level Scripts  |
+|  5 Subagents     |  |  24 root-level Scripts  |
 |  agents/*.md     |  |  scripts/*.py          |
 |                  |  |                        |
 |  blog-researcher |  |  analyze_blog          |
@@ -190,11 +190,11 @@ Structural templates for different content types. Each template defines
 section structure, word count targets, and format-specific guidance.
 See [TEMPLATES.md](TEMPLATES.md) for the full reference.
 
-### 6. Root-Level Python Scripts (23)
+### 6. Root-Level Python Scripts (24)
 
 **Location**: `scripts/*.py`
 
-Twenty-three Python helpers live at the repository root (count them with
+Twenty-four Python helpers live at the repository root (count them with
 `ls scripts/*.py | wc -l`; `scripts/windows_installer_ownership.ps1` is the
 PowerShell twin of the ownership engine and is not counted). They support the
 orchestrator, the delivery contract, the installers and the CI checks.
@@ -215,6 +215,7 @@ dependencies are stdlib-only or narrowly pinned.
 | `content_decay.py` | GSC content-decay detector: 20%+ QoQ decline | v1.10.0 |
 | `dependency_smoke.py` | Offline initialization smoke checks for the optional runtimes | Maintenance |
 | `discourse_research.py` | Discourse-brief synthesis from SERP JSON; depth-bounded parsing; path-traversal guards | v1.8.0 |
+| `export_publish.py` | Builds the publish set (`out/<NN>-<slug>/`) from the gated draft folder: article `.md`, cover and numbered images; refuses an unnumbered or stale layout | v2.3.2 |
 | `generate_hero.py` | Hero image ladder: Banana MCP -> Gemini API -> Unsplash/Pexels/Pixabay -> Openverse | v1.9.0 |
 | `installer_ownership.py` | Shared Unix legacy/v2 ownership verification, migration and rollback | Unreleased |
 | `kb_client.py` | Company knowledge base client: MCP text retrieval plus file-service asset download, with one citable evidence bundle for a draft | v2.3.2 |

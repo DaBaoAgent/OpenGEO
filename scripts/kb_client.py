@@ -787,8 +787,11 @@ def cmd_ground(args: argparse.Namespace, mcp: KbMcp, files: KbFiles) -> int:
             if not body.strip():
                 continue
             # Keep CJK: it is valid on every supported filesystem and it is the
-            # readable part of a knowledge-base doc_id.
-            doc_file = docs_dir / f"{re.sub(r'[^\w.-]+', '_', doc_id)}.md"
+            # readable part of a knowledge-base doc_id. The substitution stays
+            # out of the f-string: a backslash inside one is a syntax error
+            # before 3.12, and this file has to import on 3.11.
+            safe_doc_id = re.sub(r"[^\w.-]+", "_", doc_id)
+            doc_file = docs_dir / f"{safe_doc_id}.md"
             doc_file.parent.mkdir(parents=True, exist_ok=True)
             doc_file.write_text(body, encoding="utf-8")
             record = {

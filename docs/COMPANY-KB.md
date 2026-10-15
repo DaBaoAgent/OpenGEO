@@ -31,13 +31,13 @@ Library names (`kb`): `ayh-product`, `jks-product`, `sop` (read-only),
 python3 scripts/kb_client.py ground \
   --query "轮椅租赁 价格 流程" --query "昆山 苏州 门店" \
   --kb jks-product,marketing --top-k 6 \
-  --out out/<NN>-<slug>/kb --pull-assets --resolve-assets --asset-limit 12
+  --out drafts/<NN>-<slug>/kb --pull-assets --resolve-assets --asset-limit 12
 ```
 
 Output:
 
 ```
-out/<NN>-<slug>/kb/
+drafts/<NN>-<slug>/kb/
   kb-evidence.json        queries, documents, assets, provenance
   documents/<doc_id>.md   full text of every matching document
   assets/<source path>    downloaded binaries, source path preserved
@@ -62,11 +62,31 @@ when a source changed underneath a draft.
 
 ## Output location
 
-Delivery packages live under `out/<NN>-<slug>/`: a two-digit sequence number in
-delivery order plus the post slug, so `out/01-kunshan-suzhou-wheelchair-rental/`
-is the first package. `ground` writes into the package's `kb/` subfolder, which
-keeps the evidence next to the article it supports. Take the next free number
-and do not renumber a package once it has been delivered.
+A delivered article occupies two sibling folders that share one sequence number
+`NN` and one slug.
+
+- `drafts/<NN>-<slug>/` is the gated working package: the article, the numbered
+  publish images, `hero.jpg`, the rendered `.html` and `.pdf`, the `kb/` evidence
+  bundle, `preview/`, `review.md`, `preflight-report.json` and
+  `capabilities.json`. This is the delivery contract's draft folder `D`, and
+  `ground` writes into `D/kb/`.
+- `out/<NN>-<slug>/` is the publish set and nothing else: the article `.md` plus
+  five numbered `.jpg` files. `01-cover.jpg` is the cover, `02` to `05` are the
+  body images in the order the article uses them. It carries no HTML, no PDF, no
+  evidence bundle and no review, because the platform takes text and images.
+
+Take the next free number and never renumber a delivered package. Build the
+publish set from the working package rather than copying files by hand:
+
+```bash
+python3 scripts/export_publish.py --draft drafts/<NN>-<slug>
+```
+
+The exporter refuses a draft folder that is not named `<NN>-<slug>`, an image
+reference that is not flat and numbered in ascending article order, and an
+existing publish folder holding anything it did not create, unless `--force` is
+passed. Renderer placeholders such as `[TOC]` are dropped from the published
+copy only, because the draft keeps them for `blog_render.py`.
 
 Moving a package after it has been reviewed breaks the review binding: the
 Gate 4 verifier state is keyed on the absolute folder path, so a relocated
@@ -74,14 +94,13 @@ package reports a missing verifier state and needs a fresh
 `blog_preflight.py --init-review-nonce` and a fresh `blog-reviewer` dispatch
 before it passes again.
 
-Packages are deliberately not version controlled. The root `.gitignore` ignores
-`out/`: a package holds company originals, rendered previews and the raw source
-documents behind each claim, and all of it is either re-downloadable or
-rebuildable. `kb-evidence.json` is the recipe. Tracking `out/` would also fail
-`scripts/check_secrets.py`, because the rendered HTML carries
-`blog-source-sha256` and `blog-body-sha256` meta tags that its entropy detector
-flags with no adjudication rule. Untracked, the directory never reaches CI, but
-a local scan still reports those two lines until the package is deleted.
+Both folders are ignored by Git. A package holds company originals, the raw
+source documents behind each claim and rendered previews, and all of it is
+either re-downloadable or rebuildable. `kb-evidence.json` is the recipe.
+Tracking either folder would also fail `scripts/check_secrets.py`, because the
+rendered HTML carries `blog-source-sha256` and `blog-body-sha256` meta tags that
+its entropy detector flags with no adjudication rule.
+
 
 ## Workflow
 

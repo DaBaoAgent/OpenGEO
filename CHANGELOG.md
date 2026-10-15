@@ -12,7 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Ground drafts in the company knowledge base: `scripts/kb_client.py` (stdlib only; MCP text
   over `:8788`, binaries over `:8789`), the internal `blog-kb` sub-skill that wraps it,
   `docs/COMPANY-KB.md`, and the `company_kb` server in `.mcp.example.json`.
-  `ground --pull-assets --resolve-assets` writes `drafts/<slug>/kb/` with a `doc_id`/`sha256`
+  `ground --pull-assets --resolve-assets` writes `drafts/<NN>-<slug>/kb/` with a `doc_id`/`sha256`
   trail for every document and image, and recovers image references whose recorded `原件：`
   path belongs to a different tree; a name several files share is reported as `ambiguous`
   rather than guessed.
@@ -22,11 +22,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `loading="lazy"`/`decoding="async"` while the hero keeps `fetchpriority="high"`.
 - Fall back to an installed Edge or Chrome when the bundled patchright/playwright browser
   is missing, so Gate 3 reports content defects instead of a missing download.
+- Split delivery across two sibling folders that share a sequence number:
+  `drafts/<NN>-<slug>/` keeps the gated working package (article, images, hero, HTML, PDF,
+  `kb/`, `preview/`, `review.md`) and `out/<NN>-<slug>/` holds the publish set, which is the
+  article `.md` plus the numbered `.jpg` images and nothing else.
+- Add `scripts/export_publish.py`, which builds the publish set from the working package,
+  turns the hero into `01-cover.jpg`, and refuses a draft folder that is not named
+  `<NN>-<slug>`, an image that is not flat and numbered in ascending article order, or a
+  publish folder holding anything it did not create. Renderer placeholders such as `[TOC]`
+  are dropped from the published copy only; the draft keeps them for `blog_render.py`.
 
 ### Fixed
 
 - Hash source bytes with `O_BINARY` on Windows: text mode collapsed CRLF and could stop at a
   `0x1A` byte, so the recorded digest could disagree with the file on disk.
+- Fix a Python 3.11 syntax error in `scripts/kb_client.py`: an f-string whose expression held
+  a backslash parses on 3.12 and later but not on 3.11, so the CI test job failed during
+  collection instead of running the suite.
 
 ### Changed
 

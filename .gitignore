@@ -63,10 +63,12 @@ output/
 demo-output/
 .raw/
 
-# Company content packages (out/<NN>-<slug>/): re-downloadable company
-# assets, rendered previews and the raw source documents behind each
-# claim. Rebuild the evidence with scripts/kb_client.py ground;
-# see docs/COMPANY-KB.md. Not tracked, so it never reaches a remote.
+# Company content packages. drafts/<NN>-<slug>/ is the gated working
+# package (company originals, the raw source documents behind each claim,
+# rendered previews); out/<NN>-<slug>/ is the publish set derived from it.
+# Both are rebuildable through scripts/kb_client.py ground, and the rendered
+# HTML trips scripts/check_secrets.py. See docs/COMPANY-KB.md.
+drafts/
 out/
 
 # Working documents

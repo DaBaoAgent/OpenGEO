@@ -275,6 +275,7 @@ Never run a helper through a path relative to the current project.
 5. **Review**: spawn `blog-reviewer` with the draft path, the reference roots and `$NONCE`. It returns text; you save it verbatim to `D/review.md`. The reviewer never writes files.
 6. **Gates**: `python3 "$BLOG_SCRIPT_DIR/blog_preflight.py" --draft "$D" --strict` (add `--repair-attempt` inside the repair loop).
 7. **Loop**: on a block, fix and repeat from step 2 or 3. Any change to `S.md`, `S.html`, `S.pdf` or the hero requires a re-render, a re-init of the nonce and a re-review (the gate checks stored digests and fails otherwise). Maximum 3 iterations; on the third failure stop and present the diagnostic instead of the draft.
+8. **Publish package**: once the gates pass, build `out/<N> <中文标题>/` holding the Word document, the HTML page and `图片/` (1 cover + 4 inline images). N is the next number in delivery order, the folder and file names are Chinese, and the contents follow `${CLAUDE_SKILL_DIR}/references/publish-package.md`. This local package is what the user publishes from; the `drafts/` folder stays the working copy.
 
 Deliver the content, scorecard, `preview/*.png` and improvement notes ONLY when all gates pass. The gates review first, not the user. The nonce stops accidents and casual forgery; it does not stop a process running as the same user that can read the verifier state file.
 

@@ -1,0 +1,45 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\04-founder-story-19-years",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [
+        "link returned documented 403 and is allowed by external-links.allowed: https://baike.baidu.com/item/%E6%98%86%E5%B1%B1%E7%A6%8F%E5%AE%8F%E5%BA%B7%E5%A4%8D%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/20987680"
+      ],
+      "imgs": [
+        "hero.jpg",
+        "02-factory.jpg",
+        "03-scooter.jpg",
+        "04-electric.jpg",
+        "05-wheel.jpg"
+      ],
+      "links_checked": 7,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 380,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 380,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 19130,
+        "critical_positions": {
+          "title": 304,
+          "meta": 371,
+          "canonical": 688,
+          "json_ld": 2804,
+          "main_content": 8127
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5302
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

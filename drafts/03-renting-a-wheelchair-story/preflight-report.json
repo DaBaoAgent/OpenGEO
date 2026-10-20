@@ -1,0 +1,43 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\03-renting-a-wheelchair-story",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "imgs": [
+        "hero.jpg",
+        "02-factory-pickup.jpg",
+        "03-two-pickup-points.jpg",
+        "04-rental-scooter.jpg",
+        "05-lightweight-chair.jpg"
+      ],
+      "links_checked": 5,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 324,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 324,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 19119,
+        "critical_positions": {
+          "title": 304,
+          "meta": 401,
+          "canonical": 729,
+          "json_ld": 2932,
+          "main_content": 8300
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5347
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

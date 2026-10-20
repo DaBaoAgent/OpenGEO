@@ -1,0 +1,512 @@
+{
+  "generated_at": "2026-10-17T05:20:59+00:00",
+  "source": {
+    "mcp_url": "http://192.168.1.79:8788/mcp",
+    "files_url": "http://192.168.1.79:8789/api"
+  },
+  "queries": [
+    {
+      "query": "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业",
+      "kb": "common,marketing,jks-product",
+      "hit_count": 25
+    }
+  ],
+  "documents": [
+    {
+      "doc_id": "jks-product/18-2474a8.jpg",
+      "title": "详情/18",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 456,
+      "sha256": "3f6c17941ef8520dd8ecfe41a254ec05ce26ac8195c0f0f1e437f82e5debe134",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_18-2474a8.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/9 H010便携护理床空气纤维床垫/详情/18.jpg"
+      ]
+    },
+    {
+      "doc_id": "marketing/.overview-118c1c.md",
+      "title": "公众号推文_李铭调研福宏康复/.overview",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 1432,
+      "sha256": "6d0b12f78827d5b88b34db079b396c332b91686bb2bd853ff97fb56c427c2692",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\marketing_.overview-118c1c.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "03-Viking知识/公司资料索引/gongzhonghao/公众号推文_李铭调研福宏康复/.overview.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/A3镁铝合金大轮手动轮椅-产品详细信息-32d8f8.txt",
+      "title": "A3镁铝合金大轮手动轮椅-产品详细信息",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 4517,
+      "sha256": "dc871d20079b15e827a648f763f3923f3f76734de416eb384c46eb563484133b",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_A3镁铝合金大轮手动轮椅-产品详细信息-32d8f8.txt.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/2 A3 镁铝合金大轮手动轮椅/A3镁铝合金大轮手动轮椅-产品详细信息.txt"
+      ]
+    },
+    {
+      "doc_id": "marketing/.abstract-8bc0a8.md",
+      "title": "公众号推文_李铭调研福宏康复/.abstract",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 325,
+      "sha256": "9a9f4f909be169cfed120260e22f989c6dec5503a2d0ccb3aa271f0dfd9bed1c",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\marketing_.abstract-8bc0a8.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "03-Viking知识/公司资料索引/gongzhonghao/公众号推文_李铭调研福宏康复/.abstract.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/2025佳康顺内销目录-ab48aa.pdf",
+      "title": "产品资料/2025佳康顺内销目录",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 20000,
+      "sha256": "e353af670b4b834951a62220ef14b9f2e55336ba580d836e7e0c67f28f80ef2a",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_2025佳康顺内销目录-ab48aa.pdf.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "13 佳康顺资料/产品资料/2025佳康顺内销目录.pdf"
+      ]
+    },
+    {
+      "doc_id": "common/.abstract-d57e8c.md",
+      "title": "gongzhonghao/.abstract",
+      "kb": "common",
+      "version": 2,
+      "chars": 305,
+      "sha256": "49776f1ad4e5e88cb61e4ce5974d36e4fda638660983259bf9aa034d10bf3169",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\common_.abstract-d57e8c.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "03-Viking知识/公司资料索引/gongzhonghao/.abstract.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/省前沿技术研发计划（社会发展领域）指南建议表-cc854d.png",
+      "title": "13 佳康顺资料/省前沿技术研发计划（社会发展领域）指南建议表",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 311,
+      "sha256": "5b8f091ecf193c74cfb8756516f176525c0883c166be1c79c6c2fb2d9690cb06",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_省前沿技术研发计划_社会发展领域_指南建议表-cc854d.png.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "13 佳康顺资料/省前沿技术研发计划"
+      ]
+    },
+    {
+      "doc_id": "marketing/公众号推文_李铭调研福宏康复-16d7fc.md",
+      "title": "公众号推文_李铭调研福宏康复",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 2241,
+      "sha256": "855a359f72d031744d6e5de1988655cd1717209e54c2578527404a20d42ca72c",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\marketing_公众号推文_李铭调研福宏康复-16d7fc.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "03-Viking知识/公司资料索引/gongzhonghao/公众号推文_李铭调研福宏康复/公众号推文_李铭调研福宏康复.md"
+      ]
+    },
+    {
+      "doc_id": "common/官网.txt-c77b7f.md",
+      "title": "官网.txt",
+      "kb": "common",
+      "version": 2,
+      "chars": 6967,
+      "sha256": "d4534507f6481dc7424f6691b2214045cade8fc26d70f76b0152f52961763e1a",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\common_官网.txt-c77b7f.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@其他资料/官网.txt.md"
+      ]
+    },
+    {
+      "doc_id": "marketing/微信图片_20260905210006_453_30.jpg-a48009.md",
+      "title": "微信图片_20260905210006_453_30.jpg",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 1131,
+      "sha256": "d236c4d7572a9d05def3bcc2342a2173b3da7bf8d0f8ce49a99254eb95005f21",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\marketing_微信图片_20260905210006_453_30.jpg-a48009.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905210006_453_30.jpg.md",
+        "5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905210006_453_30.jpg"
+      ]
+    },
+    {
+      "doc_id": "common/官网-795403.txt",
+      "title": "@其他资料/官网",
+      "kb": "common",
+      "version": 4,
+      "chars": 6484,
+      "sha256": "a932d362809af540ee601f748dbe7170f0a22a108baeee5c33f6f47bd35a2a58",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\common_官网-795403.txt.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "5 @文档/@其他资料/官网.txt"
+      ]
+    },
+    {
+      "doc_id": "common/.overview-15a632.md",
+      "title": "gongzhonghao/.overview",
+      "kb": "common",
+      "version": 2,
+      "chars": 1484,
+      "sha256": "1050ddc11b3f25b3d45ed20df1aae72b5bc691f90716332f1d6886c7ae80e397",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\common_.overview-15a632.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "03-Viking知识/公司资料索引/gongzhonghao/.overview.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/5-口令：我们需要参加下个月的上海康复博览会，请列出所需的所有公司资质、产品认证和最新产品介绍。.doc-41ccc5.md",
+      "title": "5 口令：我们需要参加下个月的上海康复博览会，请列出所需的所有公司资质、产品认证和最新产品介绍。.doc",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 5358,
+      "sha256": "352de7bc35d5bb6efa03fad4f9ccb03a54d510ae6dfa85b1b3e91bedeadea847",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_5-口令_我们需要参加下个月的上海康复博览会_请列出所需的所有公司资质_产品认证和最新产品介绍_.doc-41ccc5.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@开会/11.10/5 口令：我们需要参加下个月的上海康复博览会，请列出所需的所有公司资质、产品认证和最新产品介绍。.doc.md"
+      ]
+    },
+    {
+      "doc_id": "common/11.10_doc合并-227531.md",
+      "title": "11.10/11.10_doc合并",
+      "kb": "common",
+      "version": 2,
+      "chars": 20000,
+      "sha256": "10ad7f7bd765e645f025a914b4717dc704702cece4f1cd1c127d9da1277698c2",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\common_11.10_doc合并-227531.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@开会/11.10/11.10_doc合并.md"
+      ]
+    },
+    {
+      "doc_id": "common/官网-453166.md",
+      "title": "@其他资料/官网",
+      "kb": "common",
+      "version": 2,
+      "chars": 6586,
+      "sha256": "64aa4a38654dc6d825df8e79b03174195ab6e627d8e85a3c8c3be8be2d6af8cb",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\common_官网-453166.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@其他资料/官网.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/2025佳康顺内销目录.pdf-d55e37.md",
+      "title": "2025佳康顺内销目录.pdf",
+      "kb": "jks-product",
+      "version": 2,
+      "chars": 20000,
+      "sha256": "63304c430ce345bfb600ba64ac4a378170b079bb5681c01587d3a3b101e3da26",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_2025佳康顺内销目录.pdf-d55e37.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/13 佳康顺资料/产品资料/2025佳康顺内销目录.pdf.md"
+      ]
+    },
+    {
+      "doc_id": "jks-product/06-b9771f.jpg",
+      "title": "详情/06",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 440,
+      "sha256": "28cc36dfa9cc87232af26a032590efba259a2ffd80b679bcedd1922ed360cbd5",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_06-b9771f.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/25 朋友二-绿色/详情/06.jpg"
+      ]
+    },
+    {
+      "doc_id": "jks-product/06-1c90c2.jpg",
+      "title": "详情/06",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 440,
+      "sha256": "71a91ff413efb2b5ec7577c779ccfe8dcfed798399f9538b28b04daae5531b3e",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_06-1c90c2.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/26 朋友二-紫色/详情/06.jpg"
+      ]
+    },
+    {
+      "doc_id": "common/03-15f48b.jpg",
+      "title": "详情/03",
+      "kb": "common",
+      "version": 4,
+      "chars": 438,
+      "sha256": "35cbc94900ee7a9954c6c43ddc1c1fc3907bbd2ba8a4a7664f74f0509aa090d7",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\common_03-15f48b.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "1 蓓蓓的文件/3 美团/F4豪华版/详情/03.jpg"
+      ]
+    },
+    {
+      "doc_id": "jks-product/04-7cc5c5.jpg",
+      "title": "详情/04",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 448,
+      "sha256": "1685d438cc2f1e42afd301ae564d952d236651bbf607fdaad100c2b344c1f33e",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_04-7cc5c5.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/27 朋友三-康复助行器科可调速款/详情/04.jpg"
+      ]
+    },
+    {
+      "doc_id": "jks-product/03-e9be5a.jpg",
+      "title": "详情/03",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 443,
+      "sha256": "360d1c151ef44fb70304065a107549e3416c7c1b7f6558f60af6f379d0799de2",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_03-e9be5a.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/20 X3碳纤维电动轮椅/详情/03.jpg"
+      ]
+    },
+    {
+      "doc_id": "marketing/微信图片_20260905205615_449_30.jpg-7c9604.md",
+      "title": "微信图片_20260905205615_449_30.jpg",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 1186,
+      "sha256": "933ee7f58ce302f012d0651db6f6784f79e55ffe041d85182a45aee04dc6dc36",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\marketing_微信图片_20260905205615_449_30.jpg-7c9604.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905205615_449_30.jpg.md",
+        "5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905205615_449_30.jpg"
+      ]
+    },
+    {
+      "doc_id": "jks-product/04-1574fd.jpg",
+      "title": "详情/04",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 450,
+      "sha256": "ac921b885bae2c1d2e52b7b2600f9b7eafea8105c31df1789bdfe64398efe310",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_04-1574fd.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/18 P10碳纤维电动轮椅10AH锂电/详情/04.jpg"
+      ]
+    },
+    {
+      "doc_id": "jks-product/05-3fdc52.jpg",
+      "title": "详情/05",
+      "kb": "jks-product",
+      "version": 4,
+      "chars": 446,
+      "sha256": "42458dff90ff3a1348ebf2552dbded98afb19f2fb93dd784fddf2e2c9b80715c",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\jks-product_05-3fdc52.jpg.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "7 详情页/2 A3 镁铝合金大轮手动轮椅/详情/05.jpg"
+      ]
+    },
+    {
+      "doc_id": "marketing/微信图片_20260905205615_448_30.jpg-880d4e.md",
+      "title": "微信图片_20260905205615_448_30.jpg",
+      "kb": "marketing",
+      "version": 2,
+      "chars": 1332,
+      "sha256": "7f90c521903e15221bc5431a3ca14225ad32c1de31ff1baf5544deaca61081bf",
+      "local_path": "drafts\\02-jiakangshun-brand-story\\kb\\documents\\marketing_微信图片_20260905205615_448_30.jpg-880d4e.md.md",
+      "matched_queries": [
+        "福宏康复 佳康顺 品牌 发展历程 专利 高新技术企业"
+      ],
+      "assets": [
+        "04-第二大脑-公司部分/BaiduSyncdisk文档/5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905205615_448_30.jpg.md",
+        "5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905205615_448_30.jpg"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "root": "files",
+      "source_path": "7 详情页/9 H010便携护理床空气纤维床垫/详情/18.jpg",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story\\kb\\assets\\7 详情页\\9 H010便携护理床空气纤维床垫\\详情\\18.jpg",
+      "bytes": 243736,
+      "sha256": "58b91ee551fc7b2a93f01577bab03de2e4106b2068b4a0a240ece9d98512ceb2"
+    },
+    {
+      "root": "files",
+      "source_path": "7 详情页/25 朋友二-绿色/详情/06.jpg",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story\\kb\\assets\\7 详情页\\25 朋友二-绿色\\详情\\06.jpg",
+      "bytes": 184534,
+      "sha256": "53841b224a0348c91de3a42dacb4cb445f8a22264779c5f07e909c09c4e74344"
+    },
+    {
+      "root": "files",
+      "source_path": "7 详情页/26 朋友二-紫色/详情/06.jpg",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story\\kb\\assets\\7 详情页\\26 朋友二-紫色\\详情\\06.jpg",
+      "bytes": 184534,
+      "sha256": "53841b224a0348c91de3a42dacb4cb445f8a22264779c5f07e909c09c4e74344"
+    },
+    {
+      "root": "files",
+      "source_path": "7 详情页/27 朋友三-康复助行器科可调速款/详情/04.jpg",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story\\kb\\assets\\7 详情页\\27 朋友三-康复助行器科可调速款\\详情\\04.jpg",
+      "bytes": 183364,
+      "sha256": "a09d52b72300fd5ca78246ceedcc7463262aa86e3cee9bc4469499ff86df4f1f"
+    },
+    {
+      "root": "files",
+      "source_path": "7 详情页/20 X3碳纤维电动轮椅/详情/03.jpg",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story\\kb\\assets\\7 详情页\\20 X3碳纤维电动轮椅\\详情\\03.jpg",
+      "bytes": 183364,
+      "sha256": "a09d52b72300fd5ca78246ceedcc7463262aa86e3cee9bc4469499ff86df4f1f"
+    },
+    {
+      "root": "files",
+      "source_path": "7 详情页/18 P10碳纤维电动轮椅10AH锂电/详情/04.jpg",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story\\kb\\assets\\7 详情页\\18 P10碳纤维电动轮椅10AH锂电\\详情\\04.jpg",
+      "bytes": 183364,
+      "sha256": "a09d52b72300fd5ca78246ceedcc7463262aa86e3cee9bc4469499ff86df4f1f"
+    },
+    {
+      "root": "files",
+      "source_path": "2   轮椅租赁图文/14 昆山成片/3.png",
+      "local_path": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story\\kb\\assets\\2   轮椅租赁图文\\14 昆山成片\\3.png",
+      "bytes": 2793191,
+      "sha256": "3a0e42714d4b5a48d3e9549b2cb2fe3321af42dbd4e238b23b3233425471db1a"
+    }
+  ],
+  "unresolved_assets": [
+    {
+      "root": "files",
+      "path": "5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905210006_453_30.jpg",
+      "error": "download 5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905210006_453_30.jpg: HTTP 404 {\"ok\": false, \"error\": \"not a file\"}",
+      "resolution": "missing"
+    },
+    {
+      "root": "files",
+      "path": "1 蓓蓓的文件/3 美团/F4豪华版/详情/03.jpg",
+      "error": "download 1 蓓蓓的文件/3 美团/F4豪华版/详情/03.jpg: HTTP 404 {\"ok\": false, \"error\": \"not a file\"}",
+      "resolution": "ambiguous"
+    },
+    {
+      "root": "files",
+      "path": "5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905205615_449_30.jpg",
+      "error": "download 5 @文档/@公众号推文/9.3-5号北京展会/微信图片_20260905205615_449_30.jpg: HTTP 404 {\"ok\": false, \"error\": \"not a file\"}",
+      "resolution": "missing"
+    }
+  ],
+  "derivations": [
+    {
+      "artifact": "hero.jpg",
+      "artifact_sha256": "c3f32f1d3b370424be500f10570fcf0a33bcba4b3f4d542def5cfba01cf0a350",
+      "source_path": "2   轮椅租赁图文/14 昆山成片/3.png",
+      "source_sha256": "3a0e42714d4b5a48d3e9549b2cb2fe3321af42dbd4e238b23b3233425471db1a",
+      "operation": "right panel: scale 1086x1448 by 0.5563 to 604x805, crop y=62..692, paste at x=596; left 596x630 navy panel with locally composed text; JPEG q90",
+      "verified_by": "source is a company-owned rental photo published in the company knowledge base"
+    }
+  ],
+  "web_sources": [
+    {
+      "title": "关于我们_昆山佳康顺医疗器械有限公司",
+      "url": "https://www.unqcare.com/p/about.html",
+      "used_for": "公司定位、集团创立背景、发展时间线、四家代理子公司、11个注册商标、产品两大系列、专利与销售额口径"
+    },
+    {
+      "title": "联系我们_昆山佳康顺医疗器械有限公司",
+      "url": "https://www.unqcare.com/about_about/contact.html",
+      "used_for": "公司地址、服务热线400-667-6108"
+    },
+    {
+      "title": "昆山福宏康复科技有限公司_百度百科",
+      "url": "https://baike.baidu.com/item/%E6%98%86%E5%B1%B1%E7%A6%8F%E5%AE%8F%E5%BA%B7%E5%A4%8D%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/20987680",
+      "used_for": "成立时间、法定代表人、注册资本、股东、员工数、认证、发展历程、专利数量、产学研合作、社会活动、荣誉"
+    },
+    {
+      "title": "“人工智能+”大健康助行装备项目签约落户昆山张浦（中国新闻网江苏）",
+      "url": "https://www.js.chinanews.com.cn/news/2026/0224/232493.html",
+      "used_for": "2026-02-23项目签约、总投资2亿元、占地23.5亩、苏州银瑞健康科技、政企表态"
+    },
+    {
+      "title": "“人工智能+”大健康助行装备项目签约落户昆山市张浦镇（央广网）",
+      "url": "https://js.cnr.cn/rdzt/qnjs/qnjsgdxw/20260224/t20260224_527534825.shtml",
+      "used_for": "国家高新技术企业、省级专精特新中小企业、省级工业设计中心表述"
+    },
+    {
+      "title": "昆山市张浦镇商会负责人任职前公示（昆山市人民政府）",
+      "url": "http://www.ks.gov.cn/kss/gsgg/202605/0860a26f2eba47f387393fb1c6e7c9fc.shtml",
+      "used_for": "支宏法出生年月、籍贯、学历、现任职务"
+    },
+    {
+      "title": "2026中国国际福祉博览会官网",
+      "url": "https://www.crexpo.cn/",
+      "used_for": "展会主办方、时间与地点"
+    }
+  ]
+}

@@ -96,6 +96,14 @@ def test_plan_rejects_an_unnumbered_image(tmp_path):
         exporter.plan_publish_set(draft)
 
 
+def test_plan_accepts_a_numbered_webp_image(tmp_path):
+    article = ARTICLE.replace("02-scene.jpg", "02-scene.webp")
+    draft = make_draft(tmp_path, article=article)
+    (draft / "02-scene.jpg").unlink()
+    (draft / "02-scene.webp").write_bytes(b"webp-bytes")
+    assert exporter.plan_publish_set(draft)["images"] == ["02-scene.webp", "03-store.jpg"]
+
+
 def test_plan_rejects_descending_numbers(tmp_path):
     article = ARTICLE.replace('src="02-scene.jpg"', 'src="09-scene.jpg"')
     draft = make_draft(tmp_path, article=article)

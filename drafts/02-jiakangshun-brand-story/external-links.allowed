@@ -1,0 +1,9 @@
+# Exact URLs that may return a final 403/405 for automated requests.
+# One exact http(s) URL per line; fragments ignored. The gate still checks URL
+# syntax, DNS, connection target and every redirect target before applying this.
+#
+# baike.baidu.com returns 403 to non-browser user agents from this network. The
+# entry was read successfully by a browser-class fetcher on 2026-10-17 and is the
+# cited source for the company timeline, patent counts, 2025 donation and the
+# "3-person R&D team" reading.
+https://baike.baidu.com/item/%E6%98%86%E5%B1%B1%E7%A6%8F%E5%AE%8F%E5%BA%B7%E5%A4%8D%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/20987680

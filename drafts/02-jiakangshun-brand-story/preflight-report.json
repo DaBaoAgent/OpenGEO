@@ -1,0 +1,217 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\02-jiakangshun-brand-story",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 1,
+      "name": "Capability Discovery",
+      "passed": true,
+      "violations": [],
+      "warnings": [
+        "live tool availability not provided; MCP image tools cannot be verified from declarations"
+      ],
+      "capabilities": {
+        "live_tools": [],
+        "live_tools_source": "not-provided",
+        "env_keys_present": {
+          "GOOGLE_AI_API_KEY": false,
+          "UNSPLASH_ACCESS_KEY": false,
+          "PEXELS_API_KEY": false,
+          "PIXABAY_API_KEY": false
+        },
+        "python_deps": {
+          "patchright": true,
+          "playwright": false,
+          "weasyprint": true,
+          "google.genai": true,
+          "requests": true,
+          "markdown": true
+        },
+        "project_root_files": {
+          "BRAND.md": false,
+          "VOICE.md": false,
+          "DISCOURSE.md": false
+        },
+        "agents": {
+          "blog-reviewer": true,
+          "blog-researcher": true,
+          "blog-writer": true,
+          "blog-seo": true,
+          "blog-translator": true
+        },
+        "scripts": {
+          "scripts/lint_prose.py": true,
+          "scripts/load_untrusted_root.py": true,
+          "scripts/analyze_blog.py": true
+        },
+        "image_gen_path_available": true,
+        "openverse_assumed_available": true
+      }
+    },
+    {
+      "gate": 2,
+      "name": "Format Completeness",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "artifacts": {
+        "slug": "jiakangshun-brand-story",
+        "md": [
+          "jiakangshun-brand-story.md"
+        ],
+        "html": [
+          "jiakangshun-brand-story.html"
+        ],
+        "pdf": [
+          "jiakangshun-brand-story.pdf"
+        ],
+        "hero": [
+          "hero.jpg"
+        ],
+        "review_present": true
+      },
+      "hero_checks": [
+        {
+          "file": "hero.jpg",
+          "format": "JPEG",
+          "width": 1200,
+          "height": 630,
+          "decoder": "pillow"
+        }
+      ],
+      "pdf_check": {
+        "file": "jiakangshun-brand-story.pdf",
+        "bytes": 711280,
+        "pages": 5
+      }
+    },
+    {
+      "gate": 3,
+      "name": "Visual Verification",
+      "passed": true,
+      "violations": [],
+      "warnings": [
+        "backend: patchright"
+      ],
+      "per_viewport": {
+        "mobile": {
+          "result": {
+            "hiddenText": {
+              "chars": 0,
+              "elements": 0,
+              "first": null
+            },
+            "overflows": [],
+            "bg": "rgb(250, 250, 249)",
+            "jsonLdValid": true,
+            "jsonLdType": "BlogPosting",
+            "jsonLdMissingFields": [],
+            "jsonLdVisibleConsistent": true,
+            "jsonLdConsistencyMismatches": [],
+            "jsonLdWordCount": 812,
+            "jsonLdConsistencyDetails": {}
+          },
+          "console_errors": []
+        },
+        "tablet": {
+          "result": {
+            "hiddenText": {
+              "chars": 0,
+              "elements": 0,
+              "first": null
+            },
+            "overflows": [],
+            "bg": "rgb(250, 250, 249)",
+            "jsonLdValid": true,
+            "jsonLdType": "BlogPosting",
+            "jsonLdMissingFields": [],
+            "jsonLdVisibleConsistent": true,
+            "jsonLdConsistencyMismatches": [],
+            "jsonLdWordCount": 812,
+            "jsonLdConsistencyDetails": {}
+          },
+          "console_errors": []
+        },
+        "desktop": {
+          "result": {
+            "hiddenText": {
+              "chars": 0,
+              "elements": 0,
+              "first": null
+            },
+            "overflows": [],
+            "bg": "rgb(250, 250, 249)",
+            "jsonLdValid": true,
+            "jsonLdType": "BlogPosting",
+            "jsonLdMissingFields": [],
+            "jsonLdVisibleConsistent": true,
+            "jsonLdConsistencyMismatches": [],
+            "jsonLdWordCount": 812,
+            "jsonLdConsistencyDetails": {}
+          },
+          "console_errors": [],
+          "back_button": {
+            "attempted_back": true,
+            "observation_complete": true,
+            "returned_to_previous": true,
+            "before_url": "file:///D:/%40kaifa/OpenGEO/drafts/02-jiakangshun-brand-story/jiakangshun-brand-story.html",
+            "after_url": "about:blank",
+            "checked": true,
+            "conclusive": true,
+            "obstructed": false,
+            "violation": null
+          }
+        },
+        "desktop-dark": {
+          "bg": "rgb(24, 24, 27)",
+          "light_bg": "rgb(250, 250, 249)"
+        }
+      }
+    },
+    {
+      "gate": 4,
+      "name": "Content Review",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "blocking": false,
+      "reason": "cleared all gates; 92/100 overall, no P0",
+      "score": 92
+    },
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [
+        "link returned documented 403 and is allowed by external-links.allowed: https://baike.baidu.com/item/%E6%98%86%E5%B1%B1%E7%A6%8F%E5%AE%8F%E5%BA%B7%E5%A4%8D%E7%A7%91%E6%8A%80%E6%9C%89%E9%99%90%E5%85%AC%E5%8F%B8/20987680"
+      ],
+      "imgs": [
+        "hero.jpg"
+      ],
+      "links_checked": 18,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 812,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 812,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 33152,
+        "critical_positions": {
+          "title": 304,
+          "meta": 440,
+          "canonical": 869,
+          "json_ld": 3417,
+          "main_content": 9004
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5566
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

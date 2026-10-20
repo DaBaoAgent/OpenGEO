@@ -60,7 +60,9 @@ SEPARATOR_RE = re.compile(r"^:?-{2,}:?$")
 SERIES_WRAP = 5
 FRONTMATTER_RE = re.compile(r"\A---\r?\n.*?\r?\n---[ \t]*(?:\r?\n|\Z)", re.DOTALL)
 HERO_NAMES = ("hero.png", "hero.jpg", "hero.jpeg", "hero.webp")
-NUMBERED_RE = re.compile(r"^([0-9]{2})-[^/]+\.(?:jpg|jpeg|png)$", re.IGNORECASE)
+# WebP is accepted next to hero.webp above: the publish set copies the file
+# verbatim, so the inline images keep whatever format the draft shipped.
+NUMBERED_RE = re.compile(r"^([0-9]{2})-[^/]+\.(?:jpg|jpeg|png|webp)$", re.IGNORECASE)
 DRAFT_NAME_RE = re.compile(r"^([0-9]{2})-([a-z0-9]+(?:-[a-z0-9]+)*)$")
 
 # A bare number in a transposed series reads as a typo once the grid is gone, so

@@ -1,0 +1,43 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\05-wheelchair-buying-mistakes",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "imgs": [
+        "hero.jpg",
+        "02-shop-trial.jpg",
+        "05-pickup.jpg",
+        "03-aids.jpg",
+        "04-electric.jpg"
+      ],
+      "links_checked": 5,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 302,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 302,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 18016,
+        "critical_positions": {
+          "title": 304,
+          "meta": 403,
+          "canonical": 744,
+          "json_ld": 2988,
+          "main_content": 8357
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5348
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

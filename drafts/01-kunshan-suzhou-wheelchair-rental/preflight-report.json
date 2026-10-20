@@ -82,8 +82,8 @@
       ],
       "pdf_check": {
         "file": "kunshan-suzhou-wheelchair-rental.pdf",
-        "bytes": 2062146,
-        "pages": 12
+        "bytes": 1689034,
+        "pages": 11
       }
     },
     {
@@ -109,7 +109,7 @@
             "jsonLdMissingFields": [],
             "jsonLdVisibleConsistent": true,
             "jsonLdConsistencyMismatches": [],
-            "jsonLdWordCount": 1065,
+            "jsonLdWordCount": 1036,
             "jsonLdConsistencyDetails": {}
           },
           "console_errors": []
@@ -128,7 +128,7 @@
             "jsonLdMissingFields": [],
             "jsonLdVisibleConsistent": true,
             "jsonLdConsistencyMismatches": [],
-            "jsonLdWordCount": 1065,
+            "jsonLdWordCount": 1036,
             "jsonLdConsistencyDetails": {}
           },
           "console_errors": []
@@ -147,7 +147,7 @@
             "jsonLdMissingFields": [],
             "jsonLdVisibleConsistent": true,
             "jsonLdConsistencyMismatches": [],
-            "jsonLdWordCount": 1065,
+            "jsonLdWordCount": 1036,
             "jsonLdConsistencyDetails": {}
           },
           "console_errors": [],
@@ -176,8 +176,8 @@
       "violations": [],
       "warnings": [],
       "blocking": false,
-      "reason": "cleared all gates; 92/100 overall, all figures, deposits, clauses and attributions traced to the bundle, zero blocking defects",
-      "score": 92
+      "reason": "cleared all gates; 94/100 overall, no P0",
+      "score": 94
     },
     {
       "gate": 5,
@@ -187,29 +187,28 @@
       "warnings": [],
       "imgs": [
         "hero.jpg",
-        "02-rental-scene.jpg",
-        "03-model-photo.jpg",
-        "04-pickup-points.jpg",
-        "05-showroom.jpg"
+        "02-rental-scene.webp",
+        "03-model-photo.webp",
+        "04-pickup-points.webp"
       ],
-      "links_checked": 12,
+      "links_checked": 13,
       "generated_links_skipped": 1,
       "json_ld_valid": true,
-      "declared_word_count": 1065,
+      "declared_word_count": 1036,
       "schema_validation_source": "source_html",
-      "actual_word_count": 1065,
+      "actual_word_count": 1036,
       "googlebot_byte_check": {
         "limit_bytes": 2097152,
-        "artifact_bytes": 29510,
+        "artifact_bytes": 29352,
         "critical_positions": {
           "title": 304,
           "meta": 396,
-          "canonical": 661,
-          "json_ld": 2868,
-          "main_content": 8202
+          "canonical": 684,
+          "json_ld": 3005,
+          "main_content": 8362
         },
         "critical_after_cutoff": [],
-        "inline_bloat_bytes": 5313
+        "inline_bloat_bytes": 5336
       },
       "discover_check": {
         "enabled": false

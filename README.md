@@ -115,6 +115,53 @@ The orchestrator in `skills/blog/SKILL.md` parses `/blog` input, detects the tar
 
 More architecture detail lives in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 
+## 本地图文流水线（本仓库定制）
+
+这套仓库在本机被当作「图文生产 + 多平台分发」的工作台用，除了上游的博客流程，还固化了一条产出图文发布包的流水线。全部细节见 [`skills/blog/references/publish-package.md`](skills/blog/references/publish-package.md)。
+
+**产物结构**
+
+```
+out/<N> <中文标题>/
+├── <中文标题>.docx      Word 排版稿
+├── <中文标题>.html      网页版（图片走 图片/ 相对路径）
+└── 图片/01-封面.jpg、02-…、03-…
+```
+
+**一条命令出包**
+
+```bash
+python scripts/build_publish_package.py \
+  --draft drafts/08-wheelchair-measurements \
+  --out-name "9 轮椅尺寸怎么量" \
+  --image-map "hero.jpg=01-封面.jpg;02-seat-size.jpg=02-座宽座深.jpg;…"
+```
+
+脚本做五件事：长边超 1400px 的图自动缩小、宽高比大于 1.55 的竖图补白边、图注拆成独立段落、图片 base64 内嵌、调 `convert_doc.py` 生成 docx 并改写 HTML 图片路径。
+
+**关键参数**
+
+| 环节 | 参数 | 说明 |
+|---|---|---|
+| 正文排版 | 宋体 12pt、行高 1.75、`text-indent:2em` | 字体首项必须是 `"SimSun","宋体"`，写系统别名会回退 |
+| 标题 | `h1`~`h3` | 转 docx 后带 heading 1/2/3 样式，大纲级别正常 |
+| 图片 | base64 data URI | 用相对路径转换后 docx 里 0 张图 |
+| 图片宽度 | 引擎统一拉到 14.7cm | 竖长图需提前补白边，否则超 A4 版心 |
+| 转换 | `convert_doc.py --no-preflight --no-verify` | 偶发返回成功但产出空文档，需转临时路径验证后覆盖 |
+
+**内容两种形态**
+
+- **品牌 / 种草 / 评测**：结尾给取车点、热线、微信和资料来源清单。
+- **干货**：结尾只留一句轻描淡写的品牌提及，**不写地址、联系方式、网址、资料来源**；品牌与产品名以示例的方式自然嵌在正文里。
+
+**图片规则**
+
+一张素材只能用一篇，出包前查 `out/图片使用登记.md`、出包后立刻登记（按知识库源文件记，封面由哪张源图合成也要写）。素材不足时用 PIL 自绘示意图（白底 1200×800、深色线条 + 橙色尺寸箭头），干货篇优先用示意图。
+
+**多平台分发**
+
+生成好的 md/html 可经 `wechatsync` MCP（`list_platforms` / `check_auth` / `sync_article` / `extract_page`）推到各平台草稿箱。前提是 Chrome 开着、插件「CLI / MCP 连接」处于「等待连接」，9527 端口独占，一次调用传完多个平台。
+
 ## 5-Gate Delivery Contract
 
 <p align="center">
@@ -484,6 +531,7 @@ The recommended flow downloads the installer as a file so you can inspect it bef
 - [Troubleshooting](docs/TROUBLESHOOTING.md): Common issues and fixes.
 - [MCP Integration](docs/MCP-INTEGRATION.md): Optional MCP server setup.
 - [Company KB Grounding](docs/COMPANY-KB.md): Grounding drafts in the company knowledge base.
+- [Publish Package & 图文流水线](skills/blog/references/publish-package.md): 发布包结构、编号规则、图片一次性使用台账、docx 生成参数与已知坑、wechatsync 分发。
 - [Demo](docs/DEMO.md): Worked end-to-end example.
 
 ## How To Cite

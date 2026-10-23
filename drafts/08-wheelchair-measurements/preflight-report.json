@@ -1,0 +1,42 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\08-wheelchair-measurements",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "imgs": [
+        "hero.jpg",
+        "02-seat-size.jpg",
+        "03-armrest-height.jpg",
+        "04-door-sizes.jpg"
+      ],
+      "links_checked": 1,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 231,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 231,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 15037,
+        "critical_positions": {
+          "title": 304,
+          "meta": 390,
+          "canonical": 662,
+          "json_ld": 2640,
+          "main_content": 7909
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5248
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

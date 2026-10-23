@@ -1,0 +1,42 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\09-home-modification",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "imgs": [
+        "hero.jpg",
+        "02-ramp.jpg",
+        "03-bathroom.jpg",
+        "04-bedside.jpg"
+      ],
+      "links_checked": 1,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 251,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 251,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 14758,
+        "critical_positions": {
+          "title": 304,
+          "meta": 372,
+          "canonical": 617,
+          "json_ld": 2505,
+          "main_content": 7702
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5176
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

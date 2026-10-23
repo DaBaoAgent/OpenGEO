@@ -1,0 +1,42 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\06-aids-category-review",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "imgs": [
+        "hero.jpg",
+        "02-walker-spec.jpg",
+        "03-care-bed.jpg",
+        "04-scooter-track.jpg"
+      ],
+      "links_checked": 3,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 435,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 435,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 19172,
+        "critical_positions": {
+          "title": 304,
+          "meta": 425,
+          "canonical": 685,
+          "json_ld": 2748,
+          "main_content": 8086
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5317
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "draft": "D:\\@kaifa\\OpenGEO\\drafts\\07-wheelchair-7-day-field-test",
+  "strict": true,
+  "blocked": false,
+  "gates": [
+    {
+      "gate": 5,
+      "name": "Asset + Link Integrity",
+      "passed": true,
+      "violations": [],
+      "warnings": [],
+      "imgs": [
+        "hero.jpg",
+        "02-care-bed-feedback.jpg",
+        "03-accessories.jpg",
+        "04-product-line.jpg"
+      ],
+      "links_checked": 3,
+      "generated_links_skipped": 1,
+      "json_ld_valid": true,
+      "declared_word_count": 369,
+      "schema_validation_source": "source_html",
+      "actual_word_count": 369,
+      "googlebot_byte_check": {
+        "limit_bytes": 2097152,
+        "artifact_bytes": 17657,
+        "critical_positions": {
+          "title": 304,
+          "meta": 409,
+          "canonical": 720,
+          "json_ld": 2875,
+          "main_content": 8248
+        },
+        "critical_after_cutoff": [],
+        "inline_bloat_bytes": 5352
+      },
+      "discover_check": {
+        "enabled": false
+      }
+    }
+  ]
+}
